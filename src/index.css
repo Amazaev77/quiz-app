@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+html {
+  background: #E5E5E5;
+}
+
+.test {
+  width: 570px;
+  height: 260px;
+  margin-bottom: 40px;
+  padding: 32px 30px 26px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  transition: .2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.test:hover .pile {
+  box-shadow: 0 1px 4px 0 #bababa;
+}
+
+.check, .close {
+  line-height: 18px;
+  font-size: 18px;
+  margin-left: 1px;
+}
+
+.check {
+  color: rgba(18, 210, 2, 1);
+}
+
+.close {
+  color: rgba(231, 2, 2, 1);
+}
+
+.answer-comment {
+  font-size: 18px;
+}
