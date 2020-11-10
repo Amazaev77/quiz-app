@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 import PileBox from '../PileBox';
 import MainButton from '../MainButton';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux'
 import { StyledTestStart, Title, Subtitle,
          LengthQuestions, BtnBox } from './style';
 

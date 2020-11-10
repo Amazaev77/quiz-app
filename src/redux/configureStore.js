@@ -4,6 +4,7 @@ import { createLogger } from 'redux-logger/src';
 import tests from './features/tests';
 import questions from './features/questions';
 import answers from './features/answers';
+import { save, load } from "redux-localstorage-simple";
 
 const rootReducer = combineReducers({
   tests,
@@ -16,5 +17,9 @@ const logger = createLogger({
   diff: true,
 });
 
-export const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+export const store = createStore(
+  rootReducer,
+  load({storeApp: "store-app"}),
+  applyMiddleware(thunk, logger,save({storeApp: "store-app"})),
+);
 

@@ -11,15 +11,16 @@ const Question = () => {
   const dispatch = useDispatch();
 
   const paramsId = useParams().id;
+  const activeQuestion = useSelector(state => state.questions.activeQuestion);
 
   const questionLength = useSelector(state => {
     return state.questions.database.filter(
-      (question) => question.testId == paramsId).length;
+      (question) => question.testId.toString() === paramsId).length;
   });
 
   const question = useSelector(state => state.questions.database.filter(
-    questions => questions.testId == paramsId
-  )[0]);
+    questions => questions.testId.toString() === paramsId
+  )[activeQuestion]);
 
   useEffect(() => {
     dispatch(loadAnswers(question?.id));
@@ -36,7 +37,7 @@ const Question = () => {
         <BtnBox>
           <MainButton LinkTo="/" />
         </BtnBox>
-      <LengthQuestions>0/{questionLength}</LengthQuestions>
+      <LengthQuestions>{activeQuestion + 1}/{questionLength}</LengthQuestions>
       <PileBox />
     </StyledQuestion>
   )

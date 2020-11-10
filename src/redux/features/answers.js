@@ -1,4 +1,4 @@
-const LOAD = 'questions/load';
+const LOAD = 'answers/load';
 
 const initialState = {
   loading: true,

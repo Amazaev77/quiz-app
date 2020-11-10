@@ -27,7 +27,7 @@ export function loadQuestions() {
   return (dispatch) => {
     dispatch({ type: `${LOAD}/started` });
 
-    fetch('http://localhost:3010/questions/')
+    fetch('http://localhost:3010/questions')
       .then(response => response.json())
       .then((questions) => {
         return dispatch({

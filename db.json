@@ -46,7 +46,7 @@
     {
       "id": 5,
       "testId": 4,
-      "text": "Кто поёт песню Empty Note ?"
+      "text": "Кто поёт песню?"
     }
   ],
   "answers": [
@@ -158,6 +158,34 @@
       "id": 16,
       "questionId": 4,
       "text": "null",
+      "subtext": "lorem",
+      "correct": false
+    },
+    {
+      "id": 17,
+      "questionId": 5,
+      "text": "спортсмен",
+      "subtext": "lorem",
+      "correct": false
+    },
+    {
+      "id": 18,
+      "questionId": 5,
+      "text": "актер",
+      "subtext": "lorem",
+      "correct": false
+    },
+    {
+      "id": 19,
+      "questionId": 5,
+      "text": "певец",
+      "subtext": "lorem",
+      "correct": true
+    },
+    {
+      "id": 20,
+      "questionId": 5,
+      "text": "собака",
       "subtext": "lorem",
       "correct": false
     }
