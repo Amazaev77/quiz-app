@@ -1,13 +1,5 @@
 import styled from 'styled-components/';
 
-export const StyledTestStart = styled.div`
-  background-color: #fff;
-  width: 768px;
-  margin: 50px auto;
-  position: relative;
-  padding: 30px;
-`;
-
 export const Title = styled.div`
   line-height: 40px;
   font-weight: 500;
@@ -27,8 +19,4 @@ export const LengthQuestions = styled.div`
   text-align: center;
   color: rgba(0, 0, 0, 0.4);
   margin-top: 15px;
-`;
-
-export const BtnBox = styled.div`
-  padding: 0 242px;
 `;

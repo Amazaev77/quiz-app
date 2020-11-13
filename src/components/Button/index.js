@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledMainButton = styled(Link)`
+export default styled.button`
   color: white;
   background: rgba(0, 51, 153, 1);
   cursor: pointer;
@@ -10,4 +9,7 @@ export const StyledMainButton = styled(Link)`
   justify-content: center;
   align-items: center;
   border-radius: 3px;
+  width: 100%;
+  outline: none;
+  border: 0;
 `;

@@ -1,8 +1,11 @@
 const LOAD = 'answers/load';
+const UPDATE = 'answers/update';
 
 const initialState = {
   loading: true,
-  database: [],
+  items: [],
+  answerSelected: false,
+  answerSelectedId: null
 }
 
 export default function reducer(state = initialState, action = {}) {
@@ -16,7 +19,18 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         loading: true,
-        database: action.payload
+        items: action.payload
+      }
+    case UPDATE:
+      return {
+        ...state,
+        answerSelected: true,
+        answerSelectedId: action.payload
+      }
+    case `${UPDATE}/answers`:
+      return {
+        ...state,
+        answerSelected: false
       }
     default: return state;
   }
@@ -35,4 +49,14 @@ export function loadAnswers(id) {
         })
       })
   };
+}
+
+export function onSelectAnswer(id) {
+  return {
+    type: UPDATE,
+    payload: id
+  }
+}
+export function offSelectedAnswer() {
+  return { type: `${UPDATE}/answers` }
 }

@@ -1,8 +1,9 @@
 const LOAD = 'questions/load';
+const UPDATE = 'questions/update';
 
 const initialState = {
   loading: true,
-  database: [],
+  items: [],
   activeQuestion: 0
 }
 
@@ -13,11 +14,16 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         loading: false,
       }
-    case `${LOAD}/successes`:
+    case `${LOAD}/succeed`:
       return {
         ...state,
         loading: true,
-        database: action.payload
+        items: action.payload
+      }
+    case UPDATE:
+      return {
+        ...state,
+        activeQuestion: state.activeQuestion + 1
       }
     default: return state;
   }
@@ -31,9 +37,13 @@ export function loadQuestions() {
       .then(response => response.json())
       .then((questions) => {
         return dispatch({
-          type: `${LOAD}/successes`,
+          type: `${LOAD}/succeed`,
           payload: questions
         })
       })
   };
+}
+
+export function onNextQuestion() {
+  return { type: UPDATE };
 }

@@ -3,7 +3,7 @@ const LOAD = 'tests/load';
 
 const initialState = {
   loading: true,
-  database: [],
+  items: [],
 }
 
 // Reducer
@@ -18,7 +18,7 @@ export default function reducer(state = initialState, action = {}) {
       return {
         ...state,
         loading: true,
-        database: action.payload
+        items: action.payload
       }
     default: return state;
   }

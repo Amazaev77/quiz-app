@@ -1,27 +1,24 @@
-import React from 'react';
-import MainButton from '../MainButton';
-import PileBox from '../PileBox';
-import { StyledResult, ResultText, ResultComment, BtnBox, InTestList } from './style.js';
+import React from "react";
+import Button from "../Button";
+import PileBox from "../PileBox";
+import { ResultText, ResultComment, BtnBox, InTestList } from "./style.js";
+import { Content } from "../styled/Lib";
 
 const Result = () => {
   return (
-    <StyledResult>
-      <ResultText>
-        Результат 4 из 8.
-      </ResultText>
+    <Content>
+      <ResultText>Результат 4 из 8.</ResultText>
       <ResultComment>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua
       </ResultComment>
       <BtnBox>
-        <MainButton />
+        <Button>Начать заново</Button>
       </BtnBox>
-      <InTestList>
-        Перейти к списку тестов
-      </InTestList>
+      <InTestList>Перейти к списку тестов</InTestList>
       <PileBox />
-    </StyledResult>
-  )
-}
+    </Content>
+  );
+};
 
 export default Result;

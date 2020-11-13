@@ -31,7 +31,7 @@
     {
       "id": 2,
       "testId": 1,
-      "text": "Что сделал Гарри Поттер с Бузинной палочкой Гарри Поттер в последней части фильма?"
+      "text": "Что сделал с Бузинной палочкой Гарри Поттер в последней части фильма?"
     },
     {
       "id": 3,
@@ -55,139 +55,139 @@
       "questionId": 1,
       "text": "Джон Сноу",
       "subtext": "Это он",
-      "correct": true
+      "right": true
     },
     {
       "id": 2,
       "questionId": 1,
       "text": "Бенедикт Кембербетч",
       "subtext": "Нет",
-      "correct": false
+      "right": false
     },
     {
       "id": 3,
       "questionId": 1,
       "text": "Магомед Салманович",
       "subtext": "no",
-      "correct": false
+      "right": false
     },
     {
       "id": 4,
       "questionId": 1,
       "text": "Не знаю",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 5,
       "questionId": 2,
       "text": "Выбросил",
       "subtext": "Это он",
-      "correct": false
+      "right": false
     },
     {
       "id": 6,
       "questionId": 2,
       "text": "Сломал и выбросил",
       "subtext": "Нет",
-      "correct": true
+      "right": true
     },
     {
       "id": 7,
       "questionId": 2,
       "text": "Оставил себе",
-      "correct": false
+      "right": false
     },
     {
       "id": 8,
       "questionId": 2,
       "text": "Не знаю",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 9,
       "questionId": 3,
       "text": "true",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 10,
       "questionId": 3,
       "text": "2",
       "subtext": "lorem",
-      "correct": true
+      "right": true
     },
     {
       "id": 11,
       "questionId": 3,
       "text": "false",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 12,
       "questionId": 3,
       "text": "““",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 13,
       "questionId": 4,
       "text": "TypeError",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 14,
       "questionId": 4,
       "text": "undefined",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 15,
       "questionId": 4,
       "text": "ReferenceError",
       "subtext": "lorem",
-      "correct": true
+      "right": true
     },
     {
       "id": 16,
       "questionId": 4,
       "text": "null",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 17,
       "questionId": 5,
       "text": "спортсмен",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 18,
       "questionId": 5,
       "text": "актер",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     },
     {
       "id": 19,
       "questionId": 5,
       "text": "певец",
       "subtext": "lorem",
-      "correct": true
+      "right": true
     },
     {
       "id": 20,
       "questionId": 5,
       "text": "собака",
       "subtext": "lorem",
-      "correct": false
+      "right": false
     }
   ]
 }
