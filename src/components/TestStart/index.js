@@ -8,20 +8,20 @@ import { useHistory } from "react-router-dom";
 import { Content, BtnBox } from "../styled/Lib";
 
 const TestStart = () => {
-  const paramsId = useParams().id;
+  const { id } = useParams();
 
   let history = useHistory();
 
   const test = useSelector((state) =>
-    state.tests.items.find((item) => item.id.toString() === paramsId)
+    state.tests.items.find((item) => item.id.toString() === id)
   );
 
   const questions = useSelector((state) =>
-    state.questions.items.filter((item) => item.testId.toString() === paramsId)
+    state.questions.items.filter((item) => item.testId.toString() === id)
   );
 
   function handleClick() {
-    history.push(`/${paramsId}/1`);
+    history.push(`/${id}/1`);
   }
 
   return (
@@ -29,6 +29,7 @@ const TestStart = () => {
       <Title>{test?.title}</Title>
       <Subtitle>{test?.subtitle}</Subtitle>
       <BtnBox>
+
         <Button onClick={handleClick}>Начать тест</Button>
       </BtnBox>
       <LengthQuestions>В тесте {questions.length} вопросов</LengthQuestions>

@@ -11,20 +11,21 @@ import { onNextQuestion } from "../../redux/features/questions";
 
 const Question = () => {
   const dispatch = useDispatch();
-  const paramsId = useParams().id;
+  const { id, questionId } = useParams();
   let history = useHistory();
+
 
   const activeQuestion = useSelector((state) => state.questions.activeQuestion);
   const answerSelected = useSelector((state) => state.answers.answerSelected);
 
   const questions = useSelector((state) =>
-    state.questions.items.filter((item) => item.testId.toString() === paramsId)
+    state.questions.items.filter((item) => item.testId.toString() === id)
   );
   const question = questions[activeQuestion];
 
   useEffect(() => {
-    dispatch(loadAnswers(question?.id));
-  }, [dispatch, question?.id]);
+    dispatch(loadAnswers(questionId));
+  }, [dispatch, questionId]);
 
   const answers = useSelector((state) => state.answers.items);
 
@@ -32,9 +33,7 @@ const Question = () => {
     if (activeQuestion + 1 < questions.length) {
       dispatch(onNextQuestion());
       dispatch(offSelectedAnswer());
-      history.push(`/${paramsId}/${question.id + 1}`);
-    } else {
-      history.push("/result");
+      history.push(`/${id}/${question.id + 1}`);
     }
   };
 
@@ -42,17 +41,17 @@ const Question = () => {
     <Content>
       <QuestionText>{question?.text}</QuestionText>
       {answers.map((answer) => (
-        <Answer key={answer.id} answer={answer} />
+        <Answer key={answer?.id} answer={answer} />
       ))}
       {answerSelected && (
         <BtnBox>
           <Button onClick={handleClick}>
-            {question.id !== questions.length ? "Далее" : "Завершить"}
+            {question?.id !== questions.length ? "Далее" : "Завершить"}
           </Button>
         </BtnBox>
       )}
       <LengthQuestions>
-        {question.id}/{questions.length}
+        {question?.id}/{questions.length}
       </LengthQuestions>
       <PileBox />
     </Content>

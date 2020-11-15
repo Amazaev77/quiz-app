@@ -22,10 +22,6 @@ export const ResultComment = styled.div`
   padding-right: 85px;
 `;
 
-export const BtnBox = styled.div`
-  padding: 0 242px;
-`;
-
 export const InTestList = styled.div`
   text-align: center;
   color: rgba(0, 51, 153, 1);

@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "../Button";
 import PileBox from "../PileBox";
-import { ResultText, ResultComment, BtnBox, InTestList } from "./style.js";
-import { Content } from "../styled/Lib";
+import { ResultText, ResultComment, InTestList } from "./style.js";
+import { Content, BtnBox } from "../styled/Lib";
 
 const Result = () => {
+
   return (
     <Content>
       <ResultText>Результат 4 из 8.</ResultText>
