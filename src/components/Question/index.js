@@ -21,6 +21,7 @@ const Question = () => {
   const questions = useSelector((state) =>
     state.questions.items.filter((item) => item.testId.toString() === id)
   );
+
   const question = questions[activeQuestion];
 
   useEffect(() => {
@@ -46,12 +47,12 @@ const Question = () => {
       {answerSelected && (
         <BtnBox>
           <Button onClick={handleClick}>
-            {question?.id !== questions.length ? "Далее" : "Завершить"}
+            {activeQuestion !== (questions.length - 1) ? "Далее" : "Завершить"}
           </Button>
         </BtnBox>
       )}
       <LengthQuestions>
-        {question?.id}/{questions.length}
+        {activeQuestion + 1}/{questions.length}
       </LengthQuestions>
       <PileBox />
     </Content>

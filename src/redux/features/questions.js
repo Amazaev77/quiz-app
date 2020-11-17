@@ -4,7 +4,7 @@ const UPDATE = 'questions/update';
 const initialState = {
   loading: true,
   items: [],
-  activeQuestion: 0
+  activeQuestion: 0 // currentQuestionIndex, indexOfCurrentQuestion
 }
 
 export default function reducer(state = initialState, action = {}) {

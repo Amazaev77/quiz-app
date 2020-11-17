@@ -21,7 +21,7 @@ const TestStart = () => {
   );
 
   function handleClick() {
-    history.push(`/${id}/1`);
+    history.push(`/${id}/${questions[0].id}`);
   }
 
   return (
