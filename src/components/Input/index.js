@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyledInput, StyledWrapperInput } from './style';
-import PlaceHolder from '../PlaceHolder';
+import PlaceHolder from './PlaceHolder';
 
-const Input = ({type = "text", textAlign, placeHolder}) => {
+const Input = ({type, textAlign, placeHolder, onChange, value}) => {
   const [focus, setFocus] = useState(false);
 
   const onFocus = () => {
@@ -13,6 +13,12 @@ const Input = ({type = "text", textAlign, placeHolder}) => {
     setFocus(false)
   }
 
+  useEffect(() => {
+    const i = document.getElementById('inp');
+
+    i.focus()
+  }, []);
+
   return (
     <StyledWrapperInput
       textAlign={textAlign}
@@ -22,9 +28,14 @@ const Input = ({type = "text", textAlign, placeHolder}) => {
       <PlaceHolder
         placeHolder={placeHolder}
         focus={focus}
+        value={value}
         textAlign={textAlign}
+
       />
       <StyledInput
+        id="inp"
+        onChange={e => onChange(e.target.value)}
+        value={value}
         type={type}
         textAlign={textAlign}
       />

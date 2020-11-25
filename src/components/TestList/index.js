@@ -9,7 +9,7 @@ const TestList = () => {
   return (
     <StyledTestList>
       {tests.map((test) => (
-        <Test key={test.id} test={test} />
+        <Test key={test.id} test={test}/>
       ))}
     </StyledTestList>
   );

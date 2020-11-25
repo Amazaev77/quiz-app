@@ -11,7 +11,7 @@ import Authorization from './components/Authorization';
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <Authorization />
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root')

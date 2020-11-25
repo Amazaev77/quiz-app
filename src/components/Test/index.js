@@ -2,6 +2,7 @@ import React from "react";
 import PileBox from "../PileBox";
 import { useSelector } from "react-redux";
 import { StyledTest, LengthQuestions, TestName } from "./style";
+import PropTypes from "prop-types";
 
 const Test = ({ test }) => {
   const questionLength = useSelector((state) => {
@@ -18,5 +19,9 @@ const Test = ({ test }) => {
     </StyledTest>
   );
 };
+
+Test.propTypes = {
+  test: PropTypes.object.isRequired
+}
 
 export default Test;
