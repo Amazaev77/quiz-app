@@ -8,9 +8,12 @@ import {
 } from "./style";
 import { useDispatch, useSelector } from "react-redux";
 import { onSelectAnswer } from "../../redux/features/answers";
+import { onSaveAnswer } from '../../redux/features/results';
+import { useParams } from 'react-router-dom';
 
-const Answer = ({ answer }) => {
+const Answer = ({ answer, questionId }) => {
   const dispatch = useDispatch();
+  const testId = useParams().id;
 
   const answerSelected = useSelector((state) => state.answers.answerSelected);
   const answerSelectedId = useSelector(
@@ -23,6 +26,12 @@ const Answer = ({ answer }) => {
   const handleSelectAnswer = () => {
     if (!answerSelected) {
       dispatch(onSelectAnswer(answer.id));
+      dispatch(onSaveAnswer({
+        testId,
+        questionId,
+        answerId: answer.id,
+        right: answer.right
+      }));
     }
   };
 
@@ -43,7 +52,7 @@ const Answer = ({ answer }) => {
           >
             {answer.text}
           </AnswerText>
-          {wrongAnswer && (
+          {wrongAnswer && answer.subtext && (
             <AnswerSubtext
               correctAnswer={correctAnswer}
               wrongAnswer={wrongAnswer}

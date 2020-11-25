@@ -1,4 +1,9 @@
 {
+  "admin": {
+    "login": "admin",
+    "password": "qwer",
+    "token": "qwerty1$3#5"
+  },
   "tests": [
     {
       "id": 1,
@@ -89,7 +94,7 @@
       "id": 6,
       "questionId": 2,
       "text": "Сломал и выбросил",
-      "subtext": "Нет",
+      "subtext": "Правильно",
       "right": true
     },
     {

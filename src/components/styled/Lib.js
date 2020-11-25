@@ -9,5 +9,6 @@ export const Content = styled.div`
 `;
 
 export const BtnBox = styled.div`
-  padding: 0 242px;
+  padding: 15px 242px;
+  font-size: 18px;
 `;

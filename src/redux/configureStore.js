@@ -4,11 +4,15 @@ import { createLogger } from 'redux-logger/src';
 import tests from './features/tests';
 import questions from './features/questions';
 import answers from './features/answers';
+import results from './features/results';
+import authorization from './features/authorization'
 
 const rootReducer = combineReducers({
   tests,
   questions,
-  answers
+  answers,
+  results,
+  authorization
 });
 
 const logger = createLogger({

@@ -2,36 +2,41 @@ const LOAD = 'answers/load';
 const UPDATE = 'answers/update';
 
 const initialState = {
-  loading: true,
+  loading: false,
   items: [],
   answerSelected: false,
-  answerSelectedId: null
+  answerSelectedId: null,
 }
 
-export default function reducer(state = initialState, action = {}) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case `${LOAD}/started`:
       return {
         ...state,
-        loading: false,
+        loading: true,
       }
-    case `${LOAD}/successes`:
+
+    case `${LOAD}/succeed`:
       return {
         ...state,
-        loading: true,
+        loading: false,
         items: action.payload
       }
+
     case UPDATE:
       return {
         ...state,
         answerSelected: true,
         answerSelectedId: action.payload
       }
+
     case `${UPDATE}/answers`:
       return {
         ...state,
-        answerSelected: false
+        answerSelected: false,
+        items: []
       }
+
     default: return state;
   }
 }
@@ -44,7 +49,7 @@ export function loadAnswers(id) {
       .then(response => response.json())
       .then((answers) => {
         return dispatch({
-          type: `${LOAD}/successes`,
+          type: `${LOAD}/succeed`,
           payload: answers
         })
       })
@@ -57,6 +62,7 @@ export function onSelectAnswer(id) {
     payload: id
   }
 }
+
 export function offSelectedAnswer() {
-  return { type: `${UPDATE}/answers` }
+  return { type: `${UPDATE}/answers` };
 }

@@ -3,20 +3,39 @@ import Button from "../Button";
 import PileBox from "../PileBox";
 import { ResultText, ResultComment, InTestList } from "./style.js";
 import { Content, BtnBox } from "../styled/Lib";
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom';
+import { clearResults } from '../../redux/features/results';
 
 const Result = () => {
+  let history = useHistory();
+  const dispatch = useDispatch();
+
+  const results = useSelector(state => state.results.items);
+  const filteredRightAnswers = results.filter(item => item.right);
+  const testId = results[0]?.testId;
+
+  const onToggleMenu = () => {
+    history.push('/');
+    dispatch(clearResults());
+  }
+
+  const startOverHandler = () => {
+    history.push(`/${testId}/questions`);
+    dispatch(clearResults());
+  }
 
   return (
     <Content>
-      <ResultText>Результат 4 из 8.</ResultText>
+      <ResultText>Результат {filteredRightAnswers.length} из {results.length}.</ResultText>
       <ResultComment>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua
       </ResultComment>
       <BtnBox>
-        <Button>Начать заново</Button>
+        <Button onClick={startOverHandler}>Начать заново</Button>
       </BtnBox>
-      <InTestList>Перейти к списку тестов</InTestList>
+      <InTestList onClick={onToggleMenu}>Перейти к списку тестов</InTestList>
       <PileBox />
     </Content>
   );

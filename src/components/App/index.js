@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import TestList from '../TestList';
 import TestStart from '../TestStart';
 import Question from '../Question';
+import Result from '../Result';
 import { StyledApp } from './style';
 import { loadQuestions } from "../../redux/features/questions";
 import { useDispatch } from 'react-redux';
@@ -19,6 +20,7 @@ const App = () => {
   return (
     <StyledApp>
       <Switch>
+        <Route path="/:id/result" component={Result} />
         <Route path="/:id/:questionId" component={Question} />
         <Route path="/:id" component={TestStart} />
         <Route path="/" exact component={TestList} />

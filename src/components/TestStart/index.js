@@ -2,13 +2,15 @@ import React from "react";
 import PileBox from "../PileBox";
 import Button from "../Button";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux'
 import { Title, Subtitle, LengthQuestions } from "./style";
 import { useHistory } from "react-router-dom";
 import { Content, BtnBox } from "../styled/Lib";
+import { offSelectedAnswer } from '../../redux/features/answers'
 
 const TestStart = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   let history = useHistory();
 
@@ -21,7 +23,8 @@ const TestStart = () => {
   );
 
   function handleClick() {
-    history.push(`/${id}/${questions[0].id}`);
+    history.push(`/${id}/questions`);
+    dispatch(offSelectedAnswer());
   }
 
   return (
@@ -29,7 +32,6 @@ const TestStart = () => {
       <Title>{test?.title}</Title>
       <Subtitle>{test?.subtitle}</Subtitle>
       <BtnBox>
-
         <Button onClick={handleClick}>Начать тест</Button>
       </BtnBox>
       <LengthQuestions>В тесте {questions.length} вопросов</LengthQuestions>

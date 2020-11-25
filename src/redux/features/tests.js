@@ -6,25 +6,27 @@ const initialState = {
   items: [],
 }
 
-// Reducer
-export default function reducer(state = initialState, action = {}) {
+
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case `${LOAD}/started`:
       return {
         ...state,
         loading: false,
       }
-    case `${LOAD}/successes`:
+
+    case `${LOAD}/succeed`:
       return {
         ...state,
         loading: true,
         items: action.payload
       }
+
     default: return state;
   }
 }
 
-// Action Creators
+
 export function loadTests() {
   return (dispatch) => {
     dispatch({ type: `${LOAD}/started` });
@@ -33,9 +35,9 @@ export function loadTests() {
       .then(response => response.json())
       .then((tests) => {
         return dispatch({
-          type: `${LOAD}/successes`,
+          type: `${LOAD}/succeed`,
           payload: tests
-        })
-      })
+        });
+      });
   };
 }
