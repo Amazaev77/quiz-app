@@ -45,7 +45,7 @@ const AnswerSubtextAnimation = keyframes`
     transform: translateY(0);
     height: 1rem;
   }
-`
+`;
 
 export const AnswerSubtext = styled.div`
   font-size: 18px;

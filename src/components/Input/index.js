@@ -6,17 +6,21 @@ const Input = ({type, textAlign, placeHolder, onChange, value}) => {
   const [focus, setFocus] = useState(false);
 
   const onFocus = () => {
-    setFocus(true)
+    setFocus(true);
   }
 
   const onBlur = () => {
-    setFocus(false)
+    setFocus(false);
+  }
+
+  const handleChangeInput = (e) => {
+    return onChange(e.target.value);
   }
 
   useEffect(() => {
     const i = document.getElementById('inp');
 
-    i.focus()
+    i.focus();
   }, []);
 
   return (
@@ -30,11 +34,10 @@ const Input = ({type, textAlign, placeHolder, onChange, value}) => {
         focus={focus}
         value={value}
         textAlign={textAlign}
-
       />
       <StyledInput
         id="inp"
-        onChange={e => onChange(e.target.value)}
+        onChange={handleChangeInput}
         value={value}
         type={type}
         textAlign={textAlign}

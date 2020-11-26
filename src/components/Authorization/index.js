@@ -1,14 +1,23 @@
 import React, { useState } from "react";
-import { StyledAuthorization, AuthText, BtnAuth } from './style'
+import { StyledAuthorization, AuthText, BtnAuth, ErrorBlock } from './style'
 import Button from '../Button';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
 import Input from '../Input';
-import Icon from '../Icon';
+import { login } from '../../redux/features/authorization'
+// import Icon from '../Icon';
 
 const Authorization = () => {
+  const dispacth = useDispatch();
+
   const showPass = useSelector(state => state.authorization.showPass);
+  const error = useSelector(state => state.authorization.error);
 
   const [text, setText] = useState("");
+  const [pass, setPass] = useState("");
+
+  const handleLogin = () => {
+    dispacth(login(text, pass));
+  }
 
   return (
     <StyledAuthorization>
@@ -17,18 +26,25 @@ const Authorization = () => {
       </AuthText>
         <Input
           value={text}
+          onChange={setText}
           textAlign={"center"}
           placeHolder="Введите логин"
-          onChange={setText}
         />
         <Input
+          value={pass}
+          onChange={setPass}
           type={showPass ? 'text': 'password'}
           textAlign={"center"}
           placeHolder="Введите пароль"
         />
-      <Icon />
+      {/*<Icon />*/}
       <BtnAuth>
-        <Button>
+        {error && (
+          <ErrorBlock>
+            Неверный логин или пароль
+          </ErrorBlock>
+        )}
+        <Button onClick={handleLogin}>
           Войти
         </Button>
       </BtnAuth>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components'
 
 export const StyledAuthorization = styled.div`
   max-width: 1110px;
@@ -15,5 +15,24 @@ export const AuthText = styled.div`
 export const BtnAuth = styled.div`
   padding: 0 308px;
   font-size: 32px;
+`;
+
+const ErrorBlockAnimate = keyframes`
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 23px;
+    opacity: 1;
+  }
+`;
+
+export const ErrorBlock = styled.div`
+  text-align: center;
+  font-size: 20px;
+  margin-top: 15px;
+  color: #E70202;
+  animation: ${ErrorBlockAnimate} 150ms ease-in forwards;
 `;
 
