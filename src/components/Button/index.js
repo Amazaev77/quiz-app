@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export default styled.button`
   color: white;
-  background: rgba(0, 51, 153, 1);
-  cursor: pointer;
+  background: ${({authorizing}) => authorizing ? "rgb(120 139 177)" : "rgba(0, 51, 153, 1)"};
+  cursor: ${({authorizing}) => authorizing ? "none" : "pointer"};
   height: 3em;
   display: flex;
   justify-content: center;

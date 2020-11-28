@@ -6,12 +6,6 @@ export const StyledAuthorization = styled.div`
   position: relative;
 `;
 
-export const AuthText = styled.div`
-  font-weight: 500;
-  font-size: 48px;
-  margin: 30px 0;
-`;
-
 export const BtnAuth = styled.div`
   padding: 0 308px;
   font-size: 32px;
@@ -19,11 +13,9 @@ export const BtnAuth = styled.div`
 
 const ErrorBlockAnimate = keyframes`
   from {
-    height: 0;
     opacity: 0;
   }
   to {
-    height: 23px;
     opacity: 1;
   }
 `;
@@ -31,8 +23,31 @@ const ErrorBlockAnimate = keyframes`
 export const ErrorBlock = styled.div`
   text-align: center;
   font-size: 20px;
-  margin-top: 15px;
   color: #E70202;
   animation: ${ErrorBlockAnimate} 150ms ease-in forwards;
+`;
+
+export const BoxForSpinner = styled.div`
+  position: absolute;
+  bottom: 4px;
+  right: 514px
+`;
+
+const animateSpinner = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+
+export const SpinnerForButton = styled.img`
+  animation: ${animateSpinner} infinite 300ms linear;
+`;
+
+export const WrapperError = styled.div`
+  height: 23px;
+  margin-top: 15px;
 `;
 

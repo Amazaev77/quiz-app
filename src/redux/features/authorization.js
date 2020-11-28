@@ -1,7 +1,7 @@
 const SHOW = 'show/password';
 
 const initialState = {
-  token: "",
+  token: localStorage.getItem("auth-token"),
   authorizing: false,
   error: false,
   showPass: false
@@ -44,18 +44,17 @@ export const login = (login, password) => {
   return dispatch => {
     dispatch({ type: 'auth/start' });
 
-    fetch('http://localhost:3010/admin')
+    fetch(`http://localhost:3010/admin/?login=${login}&password=${password}`)
       .then(response => response.json())
       .then(json => {
-        const random = Math.random();
 
-        if (random > 0.5) {
+        if (json.login === login && json.password === password) {
           dispatch({
             type: "auth/succeed",
             payload: json
-
           });
         } else {
+          localStorage.setItem("auth-token", json.token);
           dispatch({
             type: "auth/failed",
             payload: json

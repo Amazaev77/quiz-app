@@ -7,6 +7,7 @@ export const StyledPlaceHolder = styled.div`
   width: 100%;
   text-align: ${({textAlign}) => textAlign ? "center" : "start"};
   top: ${({ focus, value }) => focus || value.length > 0 ? "0.2em" : "1em"};
+  left: ${({textAlign}) => !textAlign && "20px"};
   pointer-events: none;
   transition: font-size 350ms;
 `;

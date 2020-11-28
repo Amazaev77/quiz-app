@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Answer from "../Answer";
+import Answer from "./Answer";
 import PileBox from "../PileBox";
 import Button from "../Button";
 import { useHistory, useParams } from "react-router-dom";
@@ -8,8 +8,8 @@ import { QuestionText, LengthQuestions } from "./style";
 import { Content, BtnBox } from "../styled/Lib";
 import { loadAnswers, offSelectedAnswer } from "../../redux/features/answers";
 import { onNextQuestion, onResetIndex } from '../../redux/features/questions'
-import PreloaderQuestion from '../PreloaderQuestion';
-import PreloaderAnswers from '../PreloaderAnswers'
+import PreloaderQuestion from './PreloaderQuestion';
+import PreloaderAnswers from './PreloaderAnswers'
 
 const Question = () => {
   const dispatch = useDispatch();

@@ -6,7 +6,6 @@ const initialState = {
   items: [],
 }
 
-
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case `${LOAD}/started`:
@@ -25,7 +24,6 @@ export default function reducer(state = initialState, action) {
     default: return state;
   }
 }
-
 
 export function loadTests() {
   return (dispatch) => {

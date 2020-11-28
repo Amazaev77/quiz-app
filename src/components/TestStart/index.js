@@ -4,7 +4,7 @@ import Button from "../Button";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
 import { Title, Subtitle, LengthQuestions } from "./style";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import { Content, BtnBox } from "../styled/Lib";
 import { offSelectedAnswer } from '../../redux/features/answers'
 
@@ -25,6 +25,10 @@ const TestStart = () => {
   function handleClick() {
     history.push(`/${id}/questions`);
     dispatch(offSelectedAnswer());
+  }
+
+  if(!test) {
+    return <Redirect to="/" />
   }
 
   return (

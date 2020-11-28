@@ -9,6 +9,7 @@ import { loadQuestions } from "../../redux/features/questions";
 import { useDispatch, useSelector } from 'react-redux'
 import { loadTests } from '../../redux/features/tests';
 import Authorization from '../Authorization';
+import AdminPage from "../AdminPage";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const App = () => {
   if (token) {
     routes = (
       <Switch>
+        <Route path="/admin" component={AdminPage} />
         <Route path="/:id/result" component={Result} />
         <Route path="/:id/:questionId" component={Question} />
         <Route path="/:id" component={TestStart} />
@@ -54,4 +56,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

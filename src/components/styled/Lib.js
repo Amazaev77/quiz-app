@@ -12,3 +12,9 @@ export const BtnBox = styled.div`
   padding: 15px 242px;
   font-size: 18px;
 `;
+
+export const TitlePage = styled.div`
+  font-weight: 500;
+  font-size: 48px;
+  margin: 30px 0 60px 0;
+`;

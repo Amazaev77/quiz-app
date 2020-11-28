@@ -1,7 +1,8 @@
 import React from "react";
-import PileBox from "../PileBox";
+import PileBox from "../../PileBox";
 import { useSelector } from "react-redux";
-import { StyledTest, LengthQuestions, TestName } from "./style";
+import { LengthQuestions, TestName, StyledTest } from "./style";
+
 // import PropTypes from "prop-types";
 
 const Test = ({ test }) => {

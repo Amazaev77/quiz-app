@@ -7,8 +7,8 @@ import {
   AnswerSubtext,
 } from "./style";
 import { useDispatch, useSelector } from "react-redux";
-import { onSelectAnswer } from "../../redux/features/answers";
-import { onSaveAnswer } from '../../redux/features/results';
+import { onSelectAnswer } from "../../../redux/features/answers";
+import { onSaveAnswer } from '../../../redux/features/results';
 import { useParams } from 'react-router-dom';
 
 const Answer = ({ answer, questionId }) => {

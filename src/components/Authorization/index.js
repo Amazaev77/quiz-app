@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { StyledAuthorization, AuthText, BtnAuth, ErrorBlock } from './style'
+import { 
+  StyledAuthorization, AuthText, 
+  BtnAuth, ErrorBlock, 
+  SpinnerForButton, BoxForSpinner, WrapperError } from './style';
 import Button from '../Button';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import Input from '../Input';
-import { login } from '../../redux/features/authorization'
+import { login } from '../../redux/features/authorization';
+import spinner from '../../icons/spinner.svg';
+import { TitlePage } from '../styled/Lib'
 // import Icon from '../Icon';
 
 const Authorization = () => {
@@ -11,6 +16,7 @@ const Authorization = () => {
 
   const showPass = useSelector(state => state.authorization.showPass);
   const error = useSelector(state => state.authorization.error);
+  const authorizing = useSelector(state => state.authorization.authorizing);
 
   const [text, setText] = useState("");
   const [pass, setPass] = useState("");
@@ -19,11 +25,17 @@ const Authorization = () => {
     dispacth(login(text, pass));
   }
 
+  // const handleKeyDown = (e) => {
+  //   if (e.keyCode === 13 && !token) {
+  //     handleLogin();
+  //   }
+  // }
+
   return (
     <StyledAuthorization>
-      <AuthText>
+      <TitlePage>
         Авторизация
-      </AuthText>
+      </TitlePage>
         <Input
           value={text}
           onChange={setText}
@@ -39,12 +51,24 @@ const Authorization = () => {
         />
       {/*<Icon />*/}
       <BtnAuth>
-        {error && (
-          <ErrorBlock>
-            Неверный логин или пароль
-          </ErrorBlock>
+        <WrapperError>
+          {error && !authorizing && (
+            <ErrorBlock>
+              Неверный логин или пароль
+            </ErrorBlock>
+          )}
+        </WrapperError>
+        {authorizing && (
+          <BoxForSpinner>
+            <SpinnerForButton 
+              src={spinner} alt="loading" />
+          </BoxForSpinner>
         )}
-        <Button onClick={handleLogin}>
+        <Button 
+          onClick={handleLogin}
+          disabled={authorizing}
+          authorizing={authorizing}
+        >
           Войти
         </Button>
       </BtnAuth>
