@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SkeletonBox = styled.div`
   line-height: 33px;

@@ -7,24 +7,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { QuestionText, LengthQuestions } from "./style";
 import { Content, BtnBox } from "../styled/Lib";
 import { loadAnswers, offSelectedAnswer } from "../../redux/features/answers";
-import { onNextQuestion, onResetIndex } from '../../redux/features/questions'
-import PreloaderQuestion from './PreloaderQuestion';
-import PreloaderAnswers from './PreloaderAnswers'
+import { onNextQuestion, onResetIndex } from "../../redux/features/questions";
+import PreloaderQuestion from "./PreloaderQuestion";
+import PreloaderAnswers from "./PreloaderAnswers";
 
 const Question = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   let history = useHistory();
 
-
-  const indexOfCurrentQuestion = useSelector((state) => state.questions.indexOfCurrentQuestion);
+  const indexOfCurrentQuestion = useSelector(
+    (state) => state.questions.indexOfCurrentQuestion
+  );
   const answerSelected = useSelector((state) => state.answers.answerSelected);
 
   const questions = useSelector((state) =>
     state.questions.items.filter((item) => item.testId.toString() === id)
   );
-  const loadingQuestion = useSelector(state => state.questions.loading);
-  const loadingAnswer = useSelector(state => state.answers.loading);
+  const loadingQuestion = useSelector((state) => state.questions.loading);
+  const loadingAnswer = useSelector((state) => state.answers.loading);
 
   const question = questions[indexOfCurrentQuestion];
 
@@ -40,8 +41,8 @@ const Question = () => {
     if (indexOfCurrentQuestion + 1 < questions.length) {
       dispatch(onNextQuestion());
     } else {
-        history.push(`/${id}/result`);
-        dispatch(onResetIndex());
+      history.push(`/${id}/result`);
+      dispatch(onResetIndex());
     }
   };
 
@@ -51,16 +52,14 @@ const Question = () => {
       <QuestionText>{question?.text}</QuestionText>
       {loadingAnswer && <PreloaderAnswers />}
       {answers.map((answer) => (
-        <Answer
-          key={answer.id}
-          answer={answer}
-          questionId={question.id}
-        />
+        <Answer key={answer.id} answer={answer} questionId={question.id} />
       ))}
       {answerSelected && (
         <BtnBox>
           <Button onClick={onTogglePage}>
-            {indexOfCurrentQuestion !== (questions.length - 1) ? "Далее" : "Завершить"}
+            {indexOfCurrentQuestion !== questions.length - 1
+              ? "Далее"
+              : "Завершить"}
           </Button>
         </BtnBox>
       )}

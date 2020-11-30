@@ -1,5 +1,5 @@
-import styled from 'styled-components/';
-import {Link} from "react-router-dom";
+import styled from "styled-components/";
+import { Link } from "react-router-dom";
 
 export const StyledTestList = styled.div`
   width: 1180px;

@@ -1,21 +1,22 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 a {
   text-decoration: none;
 }
 
 body {
-  background: #E5E5E5;
+  background: #f9f9f9;
 }
 
 .test:hover .pile {
   box-shadow: 0 1px 4px 0 #bababa;
 }
 
-.check, .close {
+.check,
+.close {
   line-height: 18px;
   font-size: 18px;
   margin-left: 1px;

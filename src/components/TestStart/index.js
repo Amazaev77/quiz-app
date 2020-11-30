@@ -2,11 +2,11 @@ import React from "react";
 import PileBox from "../PileBox";
 import Button from "../Button";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 import { Title, Subtitle, LengthQuestions } from "./style";
 import { useHistory, Redirect } from "react-router-dom";
 import { Content, BtnBox } from "../styled/Lib";
-import { offSelectedAnswer } from '../../redux/features/answers'
+import { offSelectedAnswer } from "../../redux/features/answers";
 
 const TestStart = () => {
   const { id } = useParams();
@@ -27,8 +27,8 @@ const TestStart = () => {
     dispatch(offSelectedAnswer());
   }
 
-  if(!test) {
-    return <Redirect to="/" />
+  if (!test) {
+    return <Redirect to="/" />;
   }
 
   return (

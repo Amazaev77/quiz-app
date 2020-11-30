@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from "styled-components";
 
 export const StyledAnswer = styled.div`
   margin-bottom: 30px;
@@ -25,15 +25,12 @@ export const AnswerText = styled.div`
   max-width: 670px;
   overflow-wrap: anywhere;
   z-index: 100;
-  background-color:#fff;
+  background-color: #fff;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 8px;
-  color: ${({correctAnswer, wrongAnswer, answerRight}) => (
-    wrongAnswer && !answerRight ? "#E70202": (
-      correctAnswer && "#12D202"
-    )
-  )};
+  color: ${({ correctAnswer, wrongAnswer, answerRight }) =>
+    wrongAnswer && !answerRight ? "#E70202" : correctAnswer && "#12D202"};
 `;
 
 const AnswerSubtextAnimation = keyframes`
@@ -51,7 +48,6 @@ export const AnswerSubtext = styled.div`
   font-size: 18px;
   overflow-wrap: anywhere;
   animation: ${AnswerSubtextAnimation} 250ms ease-in forwards;
-  color: ${({wrongAnswer, answerRight}) => (
-    wrongAnswer && !answerRight ? "#E70202": "#12D202"
-  )};
+  color: ${({ wrongAnswer, answerRight }) =>
+    wrongAnswer && !answerRight ? "#E70202" : "#12D202"};
 `;

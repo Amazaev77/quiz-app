@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledResult = styled.div`
   padding: 30px;
@@ -28,5 +28,3 @@ export const InTestList = styled.div`
   margin-top: 30px;
   cursor: pointer;
 `;
-
-

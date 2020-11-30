@@ -6,7 +6,7 @@ import PileBox from "../PileBox";
 
 const TestList = () => {
   const tests = useSelector((state) => state.tests.items);
-  const token = useSelector(state => state.authorization.token);
+  const token = useSelector((state) => state.authorization.token);
 
   return (
     <StyledTestList>
@@ -17,7 +17,7 @@ const TestList = () => {
         </AddTest>
       )}
       {tests.map((test) => (
-        <Test key={test.id} test={test}/>
+        <Test key={test.id} test={test} />
       ))}
     </StyledTestList>
   );

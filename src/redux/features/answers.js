@@ -1,12 +1,12 @@
-const LOAD = 'answers/load';
-const UPDATE = 'answers/update';
+const LOAD = "answers/load";
+const UPDATE = "answers/update";
 
 const initialState = {
   loading: false,
   items: [],
   answerSelected: false,
   answerSelectedId: null,
-}
+};
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -14,30 +14,31 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         loading: true,
-      }
+      };
 
     case `${LOAD}/succeed`:
       return {
         ...state,
         loading: false,
-        items: action.payload
-      }
+        items: action.payload,
+      };
 
     case UPDATE:
       return {
         ...state,
         answerSelected: true,
-        answerSelectedId: action.payload
-      }
+        answerSelectedId: action.payload,
+      };
 
     case `${UPDATE}/answers`:
       return {
         ...state,
         answerSelected: false,
-        items: []
-      }
+        items: [],
+      };
 
-    default: return state;
+    default:
+      return state;
   }
 }
 
@@ -46,21 +47,21 @@ export function loadAnswers(id) {
     dispatch({ type: `${LOAD}/started` });
 
     fetch(`http://localhost:3010/answers?questionId=${id}`)
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((answers) => {
         return dispatch({
           type: `${LOAD}/succeed`,
-          payload: answers
-        })
-      })
+          payload: answers,
+        });
+      });
   };
 }
 
 export function onSelectAnswer(id) {
   return {
     type: UPDATE,
-    payload: id
-  }
+    payload: id,
+  };
 }
 
 export function offSelectedAnswer() {

@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from "styled-components";
 
 export const StyledAuthorization = styled.div`
   max-width: 1110px;
@@ -23,14 +23,14 @@ const ErrorBlockAnimate = keyframes`
 export const ErrorBlock = styled.div`
   text-align: center;
   font-size: 20px;
-  color: #E70202;
+  color: #e70202;
   animation: ${ErrorBlockAnimate} 150ms ease-in forwards;
 `;
 
 export const BoxForSpinner = styled.div`
   position: absolute;
   bottom: 4px;
-  right: 514px
+  right: 514px;
 `;
 
 const animateSpinner = keyframes`
@@ -50,4 +50,3 @@ export const WrapperError = styled.div`
   height: 23px;
   margin-top: 15px;
 `;
-
