@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import {
-  StyledAddQuestions,
   QuestionNumber,
   WrapperToAdd, AnswersText,
   WrapperAddQuestion, Wrapper,
 } from "./style";
 import TextField from "../../TextField";
-import AddAnswer from "./AddAnswer";
 
 const AddQuestion = () => {
   const [text, setText] = useState("");
 
   return (
     <WrapperAddQuestion>
-      <StyledAddQuestions>Вопросы</StyledAddQuestions>
       <WrapperToAdd>
         <QuestionNumber>#1</QuestionNumber>
         <Wrapper>
@@ -25,7 +22,6 @@ const AddQuestion = () => {
           <AnswersText>
             Ответы
           </AnswersText>
-          <AddAnswer />
         </Wrapper>
       </WrapperToAdd>
     </WrapperAddQuestion>

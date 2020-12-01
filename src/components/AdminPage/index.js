@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import {NumMax, StyledAdminPage} from "./style";
+import { NumMax, StyledAdminPage, TextQuestions } from "./style";
 import { TitlePage } from "../styled/Lib";
 import TextField from "../TextField";
 import AddQuestion from "./AddQuestion";
+import { useSelector } from "react-redux";
+import AddAnswer from './AddAnswer';
 
 const AdminPage = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
+
+  const addQuestions = useSelector(state => state.addTest.items.questions);
+  const addAnswers = useSelector(state => state.addTest.items.answers);
 
   return (
     <StyledAdminPage>
@@ -25,7 +30,9 @@ const AdminPage = () => {
         onChange={setText}
         placeHolder="Вводный текст"
       />
-      <AddQuestion />
+      <TextQuestions>Вопросы</TextQuestions>
+      {addQuestions.map((item) => <AddQuestion key={item.id}/>)}
+      {addAnswers.map(item => <AddAnswer key={item.id}/>)}
     </StyledAdminPage>
   );
 };

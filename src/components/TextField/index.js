@@ -44,17 +44,15 @@ const TextField = ({
           id="inp"
           onChange={handleChangeTextField}
           value={value}
-          type={type}
           miniSize={miniSize}
         />
       ) : (
         <StyledInput
-          autocomplete="off"
           textarea={textarea}
           id="inp"
           onChange={handleChangeTextField}
           value={value}
-          type={type}
+          inpType={type}
           textAlign={textAlign}
           miniSize={miniSize}
         />

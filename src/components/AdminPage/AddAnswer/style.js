@@ -22,12 +22,9 @@ export const NumberText = styled.div`
   margin: 0 25px;
 `;
 
-export const Checkbox = styled.input`
+export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   &[type="checkbox"] {
     display: none;
-  }
-  &[type="checkbox"]:checked + label::before {
-    content: '';
   }
 `;
 
@@ -49,13 +46,26 @@ export const Label = styled.label`
 
 export const Check = styled.img`
   position: relative;
-  right: 467px;
-  top: 4px;
-  cursor: pointer;
+  right: 464px;
+  top: 2px;
+  pointer-events: none;
 `;
 
 export const SubTextTextarea = styled.div`
   font-size: 18px;
   margin: 7px 0 45px 25px;
   color: #999999;
+`;
+
+export const WrapperAnswer = styled.div`
+  display: flex;
+`;
+
+export const InnerAnswer = styled.div`
+  flex: 8;
+`;
+
+export const Empty = styled.div`
+  width: 84px;
+  margin-right: 82px;
 `;

@@ -1,11 +1,5 @@
 import styled from "styled-components";
 
-export const StyledAddQuestions = styled.div`
-  font-weight: 500;
-  font-size: 36px;
-  margin: 60px 0 15px 0;
-`;
-
 export const WrapperToAdd = styled.div`
   display: flex;
 `;

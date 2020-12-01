@@ -48,12 +48,12 @@ export const login = (login, password) => {
       .then((response) => response.json())
       .then((json) => {
         if (json.login === login && json.password === password) {
+          localStorage.setItem("auth-token", json.token);
           dispatch({
             type: "auth/succeed",
             payload: json,
           });
         } else {
-          localStorage.setItem("auth-token", json.token);
           dispatch({
             type: "auth/failed",
             payload: json,

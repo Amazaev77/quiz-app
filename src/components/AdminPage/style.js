@@ -10,3 +10,9 @@ export const NumMax = styled.div`
   color: #949494;
   margin: 5px 0 0 30px;
 `;
+
+export const TextQuestions = styled.div`
+  font-weight: 500;
+  font-size: 36px;
+  margin: 60px 0 15px 0;
+`;

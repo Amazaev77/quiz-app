@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input.attrs(props => ({
+  type: props.inpType,
+  autocomplete: "off"
+}))`
   width: 100%;
   height: ${({miniSize}) => miniSize ? "70px" : "100px"};
   border: 0;
@@ -12,7 +15,7 @@ export const StyledInput = styled.input`
   border-radius: 4px;
 `;
 
-export const StyledTextarea = styled.textarea`
+export const StyledTextarea = styled.textarea.attrs({ type: 'text' })`
   width: 100%;
   height: ${({miniSize}) => miniSize ? "140px" : "200px"};
   border: 0;
