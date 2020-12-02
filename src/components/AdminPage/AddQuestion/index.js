@@ -38,6 +38,7 @@ const AddQuestion = ({ question, questionIndex }) => {
               answerIndex={answer.qIndex}
               questionIndex={questionIndex}
               index={index}
+              answer={answer}
             />
           ))}
           <WrapperNumberAnswer>
@@ -54,3 +55,5 @@ const AddQuestion = ({ question, questionIndex }) => {
 };
 
 export default AddQuestion;
+
+

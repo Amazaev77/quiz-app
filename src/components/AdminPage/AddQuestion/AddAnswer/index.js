@@ -7,15 +7,25 @@ import {
 import { WrapperNumberAnswer, Border } from '../../../styled/Lib';
 import checkIcon from '../../../../icons/check.svg';
 import TextField from '../../../TextField';
+import { useDispatch } from 'react-redux';
+import { onChangeAnswer, onChangeDescription } from '../../../../redux/features/addTest';
 
 
-const AddAnswer = ({ answerIndex, questionIndex, index }) => {
-  const [answer, setAnswer] = useState("");
-  const [comment, setComment] = useState("");
+const AddAnswer = ({ answerIndex, questionIndex, index, answer }) => {
+  const dispatch = useDispatch();
+
   const [checked, setChecked] = useState(false);
 
   const handleChangeCheckbox = () => {
     setChecked(!checked)
+  }
+
+  const handleChangeAnswer = (e) => {
+    dispatch(onChangeAnswer(e, index));
+  }
+
+  const handleChangeDescription = (e) => {
+    dispatch(onChangeDescription(e, index));
   }
 
   if (answerIndex !== questionIndex) {
@@ -46,15 +56,15 @@ const AddAnswer = ({ answerIndex, questionIndex, index }) => {
       )}
       <TextField
         miniSize={true}
-        value={answer}
-        onChange={setAnswer}
+        value={answer.title}
+        onChange={handleChangeAnswer}
         placeHolder={`Текст ответа #${index + 1}`}
       />
       <TextField
         textarea={true}
         miniSize={true}
-        value={comment}
-        onChange={setComment}
+        value={answer.description}
+        onChange={handleChangeDescription}
         placeHolder="Примечение после ответа"
       />
       <SubTextTextarea>
