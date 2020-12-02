@@ -22,4 +22,4 @@ const logger = createLogger({
   diff: true,
 });
 
-export const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+export const store = createStore(rootReducer, applyMiddleware(thunk, logger))

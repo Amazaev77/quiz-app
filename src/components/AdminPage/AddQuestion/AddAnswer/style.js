@@ -1,21 +1,5 @@
 import styled from "styled-components";
 
-export const StyledAddAnswer = styled.div`
-  
-`;
-
-export const WrapperNumberAnswer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-`;
-
-export const Border = styled.div`
-  border-top: 1px solid #E5E5E5;
-  flex: 1;
-  align-self: center;
-`;
-
 export const NumberText = styled.div`
   color: #E5E5E5;
   font-size: 18px;
@@ -55,17 +39,4 @@ export const SubTextTextarea = styled.div`
   font-size: 18px;
   margin: 7px 0 45px 25px;
   color: #999999;
-`;
-
-export const WrapperAnswer = styled.div`
-  display: flex;
-`;
-
-export const InnerAnswer = styled.div`
-  flex: 8;
-`;
-
-export const Empty = styled.div`
-  width: 84px;
-  margin-right: 82px;
 `;

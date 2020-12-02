@@ -18,3 +18,15 @@ export const TitlePage = styled.div`
   font-size: 48px;
   margin: 30px 0 60px 0;
 `;
+
+export const WrapperNumberAnswer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+`;
+
+export const Border = styled.div`
+  border-top: 1px solid #E5E5E5;
+  flex: 1;
+  align-self: center;
+`;

@@ -18,8 +18,16 @@ export const Wrapper = styled.div`
   flex: 1;
 `;
 
-export const AnswersText = styled.div`
+export const TextAnswers = styled.div`
   font-weight: 500;
   font-size: 32px;
   margin: 45px 0 42px 0;
+`;
+
+export const AddAnswerText = styled.div`
+  color: #1060FF;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 25px;
+  cursor: pointer;
 `;

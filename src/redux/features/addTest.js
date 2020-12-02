@@ -7,19 +7,22 @@ const initialState = {
     },
     questions: [
       { 
-        id: 6,
         text: ""
       },
       { 
-        id: 7,
         text: ""
       }
     ],
     answers: [
       { 
-        id: 21,
         title: "",
-        selected: false
+        selected: false,
+        qIndex: 0
+      },
+      { 
+        title: "",
+        selected: false,
+        qIndex: 0
       }
     ]
   }
@@ -27,8 +30,29 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case 'update/question':
+      return {
+        ...state,
+        questions: state.items.questions.map((question, index) => {
+          if (index === action.payload.index) {
+            return {
+              ...question,
+              text: action.payload.value
+            }
+
+          }
+        })
+      }
     default: return state;
   }
 }
 
+export const onChangeQuestion = (value, index) => {
+  return dispatch => {
+    dispatch({
+      type: 'update/question',
+      payload: { value, index }
+    })
+  };
+}
 
