@@ -57,140 +57,140 @@
     {
       "id": 1,
       "questionId": 1,
-      "text": "Джон Сноу",
-      "subtext": "Это он",
+      "title": "Джон Сноу",
+      "description": "Это он",
       "right": true
     },
     {
       "id": 2,
       "questionId": 1,
-      "text": "Бенедикт Кембербетч",
-      "subtext": "Нет",
+      "title": "Бенедикт Кембербетч",
+      "description": "Нет",
       "right": false
     },
     {
       "id": 3,
       "questionId": 1,
-      "text": "Магомед Салманович",
-      "subtext": "no",
+      "title": "Магомед Салманович",
+      "description": "no",
       "right": false
     },
     {
       "id": 4,
       "questionId": 1,
-      "text": "Не знаю",
-      "subtext": "lorem",
+      "title": "Не знаю",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 5,
       "questionId": 2,
-      "text": "Выбросил",
-      "subtext": "Это он",
+      "title": "Выбросил",
+      "description": "Это он",
       "right": false
     },
     {
       "id": 6,
       "questionId": 2,
-      "text": "Сломал и выбросил",
-      "subtext": "Правильно",
+      "title": "Сломал и выбросил",
+      "description": "Правильно",
       "right": true
     },
     {
       "id": 7,
       "questionId": 2,
-      "text": "Оставил себе",
+      "title": "Оставил себе",
       "right": false
     },
     {
       "id": 8,
       "questionId": 2,
-      "text": "Не знаю",
-      "subtext": "lorem",
+      "title": "Не знаю",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 9,
       "questionId": 3,
-      "text": "true",
-      "subtext": "lorem",
+      "title": "true",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 10,
       "questionId": 3,
-      "text": "2",
-      "subtext": "lorem",
+      "title": "2",
+      "description": "lorem",
       "right": true
     },
     {
       "id": 11,
       "questionId": 3,
-      "text": "false",
-      "subtext": "lorem",
+      "title": "false",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 12,
       "questionId": 3,
-      "text": "““",
-      "subtext": "lorem",
+      "title": "““",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 13,
       "questionId": 4,
-      "text": "TypeError",
-      "subtext": "lorem",
+      "title": "TypeError",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 14,
       "questionId": 4,
-      "text": "undefined",
-      "subtext": "lorem",
+      "title": "undefined",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 15,
       "questionId": 4,
-      "text": "ReferenceError",
-      "subtext": "lorem",
+      "title": "ReferenceError",
+      "description": "lorem",
       "right": true
     },
     {
       "id": 16,
       "questionId": 4,
-      "text": "null",
-      "subtext": "lorem",
+      "title": "null",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 17,
       "questionId": 5,
-      "text": "спортсмен",
-      "subtext": "lorem",
+      "title": "спортсмен",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 18,
       "questionId": 5,
-      "text": "актер",
-      "subtext": "lorem",
+      "title": "актер",
+      "description": "lorem",
       "right": false
     },
     {
       "id": 19,
       "questionId": 5,
-      "text": "певец",
-      "subtext": "lorem",
+      "title": "певец",
+      "description": "lorem",
       "right": true
     },
     {
       "id": 20,
       "questionId": 5,
-      "text": "собака",
-      "subtext": "lorem",
+      "title": "собака",
+      "description": "lorem",
       "right": false
     }
   ]

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   NumberText,
   Checkbox, Label,
@@ -8,16 +8,18 @@ import { WrapperNumberAnswer, Border } from '../../../styled/Lib';
 import checkIcon from '../../../../icons/check.svg';
 import TextField from '../../../TextField';
 import { useDispatch } from 'react-redux';
-import { onChangeAnswer, onChangeDescription } from '../../../../redux/features/addTest';
+import { 
+  onChangeAnswer, 
+  onChangeDescription, 
+  onChangeCheckbox 
+} from '../../../../redux/features/addTest';
 
 
 const AddAnswer = ({ answerIndex, questionIndex, index, answer }) => {
   const dispatch = useDispatch();
 
-  const [checked, setChecked] = useState(false);
-
-  const handleChangeCheckbox = () => {
-    setChecked(!checked)
+  const handleChangeCheckbox = (e) => {
+    dispatch(onChangeCheckbox(e.target.value, index));
   }
 
   const handleChangeAnswer = (e) => {
@@ -26,10 +28,6 @@ const AddAnswer = ({ answerIndex, questionIndex, index, answer }) => {
 
   const handleChangeDescription = (e) => {
     dispatch(onChangeDescription(e, index));
-  }
-
-  if (answerIndex !== questionIndex) {
-    return null;
   }
 
   return (
@@ -44,14 +42,14 @@ const AddAnswer = ({ answerIndex, questionIndex, index, answer }) => {
         </WrapperNumberAnswer>
       </div>
       <Checkbox
-        checked={checked}
-        id='check'
+        checked={answer.right}
+        id={`check_${index + 1}_${questionIndex}`}
         onChange={handleChangeCheckbox}
       />
-      <Label htmlFor="check">
+      <Label htmlFor={`check_${index + 1}_${questionIndex}`}>
         это правильный вариант ответа
       </Label>
-      {checked && (
+      {answer.right && (
         <Check src={checkIcon} alt="check" />
       )}
       <TextField

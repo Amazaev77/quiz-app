@@ -52,15 +52,15 @@ const Answer = ({ answer, questionId }) => {
             wrongAnswer={wrongAnswer}
             answerRight={answer.right}
           >
-            {answer.text}
+            {answer.title}
           </AnswerText>
-          {wrongAnswer && answer.subtext && (
+          {wrongAnswer && answer.description && (
             <AnswerSubtext
               correctAnswer={correctAnswer}
               wrongAnswer={wrongAnswer}
               answerRight={answer.right}
             >
-              {answer.subtext}
+              {answer.description}
             </AnswerSubtext>
           )}
         </div>
