@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { StyledInput, StyledTextarea, StyledWrapperTextField } from "./style";
 import PlaceHolder from "./PlaceHolder";
+import PropTypes from "prop-types";
 
 const TextField = ({
+  placeHolder,
+  value,
+  onChange,
   type,
   textAlign,
-  placeHolder,
-  onChange,
-  value,
   textarea,
-  miniSize
+  miniSize,
 }) => {
   const [focus, setFocus] = useState(false);
 
@@ -57,6 +58,16 @@ const TextField = ({
       )}
     </StyledWrapperTextField>
   );
+};
+
+TextField.propTypes = {
+  placeHolder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  textAlign: PropTypes.string,
+  textarea: PropTypes.bool,
+  miniSize: PropTypes.bool,
 };
 
 export default TextField;

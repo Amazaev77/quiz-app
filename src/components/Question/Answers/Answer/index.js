@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   StyledAnswer,
   AnswerCircle,
@@ -7,8 +8,8 @@ import {
   AnswerSubtext,
 } from "./style";
 import { useDispatch, useSelector } from "react-redux";
-import { onSelectAnswer } from "../../../redux/features/answers";
-import { onSaveAnswer } from "../../../redux/features/results";
+import { onSelectAnswer } from "../../../../redux/features/answers";
+import { onSaveAnswer } from "../../../../redux/features/results";
 import { useParams } from "react-router-dom";
 
 const Answer = ({ answer, questionId }) => {
@@ -67,6 +68,11 @@ const Answer = ({ answer, questionId }) => {
       </WrapperAnswer>
     </StyledAnswer>
   );
+};
+
+Answer.propTypes = {
+  answer: PropTypes.object.isRequired,
+  questionId: PropTypes.number.isRequired,
 };
 
 export default Answer;

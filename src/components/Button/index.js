@@ -13,5 +13,5 @@ export default styled.button`
   width: 100%;
   outline: none;
   border: 0;
-  margin-top: 30px;
+  margin-top: 15px;
 `;

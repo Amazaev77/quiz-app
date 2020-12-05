@@ -1,11 +1,11 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export const generateQuestionObject = () => {
   return {
     id: uuidv4(),
-    text: ""
-  }
-}
+    text: "",
+  };
+};
 
 export const generateAnswerObject = (qIndex) => {
   return {
@@ -13,6 +13,6 @@ export const generateAnswerObject = (qIndex) => {
     title: "",
     description: "",
     right: false,
-    qIndex: qIndex
-  }
-}
+    qIndex: qIndex,
+  };
+};

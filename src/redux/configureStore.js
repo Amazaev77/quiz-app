@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   answers,
   results,
   authorization,
-  addTest
+  addTest,
 });
 
 const logger = createLogger({
@@ -22,4 +22,4 @@ const logger = createLogger({
   diff: true,
 });
 
-export const store = createStore(rootReducer, applyMiddleware(thunk, logger))
+export const store = createStore(rootReducer, applyMiddleware(thunk, logger));

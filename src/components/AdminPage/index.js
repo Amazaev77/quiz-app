@@ -2,22 +2,25 @@ import React from "react";
 import { NumMax, StyledAdminPage, TextQuestions } from "./style";
 import { TitlePage } from "../styled/Lib";
 import TextField from "../TextField";
-import Questions from './Questions';
+import Questions from "./Questions";
 import { useDispatch, useSelector } from "react-redux";
-import { onChangeTestTitle, onChangeTestSubtitle } from '../../redux/features/addTest';
+import {
+  onChangeTestTitle,
+  onChangeTestSubtitle,
+} from "../../redux/features/addTest";
 
 const AdminPage = () => {
   const dispatch = useDispatch();
 
-  const test = useSelector(state => state.addTest.items.test);
+  const test = useSelector((state) => state.addTest.items.test);
 
   const handleTestTitle = (value) => {
     dispatch(onChangeTestTitle(value));
-  }
+  };
 
   const handleTestSubtitle = (value) => {
     dispatch(onChangeTestSubtitle(value));
-  } 
+  };
 
   return (
     <StyledAdminPage>
@@ -36,9 +39,7 @@ const AdminPage = () => {
         onChange={handleTestSubtitle}
         placeHolder="Вводный текст"
       />
-      <TextQuestions>
-        Вопросы
-       </TextQuestions>
+      <TextQuestions>Вопросы</TextQuestions>
       <Questions />
     </StyledAdminPage>
   );

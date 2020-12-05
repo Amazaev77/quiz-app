@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const NumberText = styled.div`
-  color: #E5E5E5;
+  color: #e5e5e5;
   font-size: 18px;
   margin: 0 25px;
 `;
 
-export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+export const Checkbox = styled.input.attrs({ type: "checkbox" })`
   &[type="checkbox"] {
     display: none;
   }
@@ -17,7 +17,7 @@ export const Label = styled.label`
   cursor: pointer;
   padding-left: 20px;
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
     border: 1px solid rgba(0, 51, 153, 0.5);
     vertical-align: middle;

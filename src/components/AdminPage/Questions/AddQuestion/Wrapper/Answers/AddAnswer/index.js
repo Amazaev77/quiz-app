@@ -1,42 +1,37 @@
-import React from 'react';
+import React from "react";
+import { NumberText, Checkbox, Label, SubTextTextarea, Check } from "./style";
+import { WrapperNumberAnswer, Border } from "../../../../../../styled/Lib";
+import checkIcon from "../../../../../../../icons/check.svg";
+import TextField from "../../../../../../TextField";
+import { useDispatch } from "react-redux";
 import {
-  NumberText,
-  Checkbox, Label,
-  SubTextTextarea, Check
-} from "./style";
-import { WrapperNumberAnswer, Border } from '../../../styled/Lib';
-import checkIcon from '../../../../icons/check.svg';
-import TextField from '../../../TextField';
-import { useDispatch } from 'react-redux';
-import { 
-  onChangeAnswer, 
-  onChangeDescription, 
-  onChangeCheckbox 
-} from '../../../../redux/features/addTest';
+  onChangeAnswer,
+  onChangeDescription,
+  onChangeCheckbox,
+} from "../../../../../../../redux/features/addTest";
+import PropTypes from "prop-types";
 
-const AddAnswer = ({ questionIndex, index, answer }) => {
+const AddAnswer = ({ index, answer }) => {
   const dispatch = useDispatch();
 
   const handleChangeCheckbox = (e) => {
     dispatch(onChangeCheckbox(e.target.value, answer.id));
-  }
+  };
 
   const handleChangeAnswer = (e) => {
     dispatch(onChangeAnswer(e, index));
-  }
+  };
 
   const handleChangeDescription = (e) => {
     dispatch(onChangeDescription(e, index));
-  }
+  };
 
   return (
     <>
       <div>
         <WrapperNumberAnswer>
           <Border />
-          <NumberText>
-            Ответ #{index + 1}
-          </NumberText>
+          <NumberText>Ответ #{index + 1}</NumberText>
           <Border />
         </WrapperNumberAnswer>
       </div>
@@ -48,9 +43,7 @@ const AddAnswer = ({ questionIndex, index, answer }) => {
       <Label htmlFor={`check_${answer.id}`}>
         это правильный вариант ответа
       </Label>
-      {answer.right && (
-        <Check src={checkIcon} alt="check" />
-      )}
+      {answer.right && <Check src={checkIcon} alt="check" />}
       <TextField
         miniSize={true}
         value={answer.title}
@@ -69,6 +62,11 @@ const AddAnswer = ({ questionIndex, index, answer }) => {
       </SubTextTextarea>
     </>
   );
-}
+};
+
+AddAnswer.propTypes = {
+  answer: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 export default AddAnswer;

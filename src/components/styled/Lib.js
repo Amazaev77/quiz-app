@@ -26,7 +26,7 @@ export const WrapperNumberAnswer = styled.div`
 `;
 
 export const Border = styled.div`
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid #e5e5e5;
   flex: 1;
   align-self: center;
 `;
