@@ -10,7 +10,7 @@ const Questions = () => {
       <AddQuestion 
         question={question}
         questionIndex={index}
-        key={index}
+        key={question.id}
       />
     ))
   )

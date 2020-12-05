@@ -41,7 +41,6 @@ const TextField = ({
       {textarea ? (
         <StyledTextarea
           textarea={textarea}
-          id="inp"
           onChange={handleChangeTextField}
           value={value}
           miniSize={miniSize}
@@ -49,7 +48,6 @@ const TextField = ({
       ) : (
         <StyledInput
           textarea={textarea}
-          id="inp"
           onChange={handleChangeTextField}
           value={value}
           inpType={type}

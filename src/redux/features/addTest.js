@@ -1,3 +1,5 @@
+import { generateQuestionObject, generateAnswerObject } from '../../helpers/mockData';
+
 const initialState = {
   items: {
     test: {
@@ -5,23 +7,11 @@ const initialState = {
       subtitle: ""
     },
     questions: [
-      { 
-        text: ""
-      },
+      generateQuestionObject()
     ],
     answers: [
-      { 
-        title: "",
-        description: "",
-        right: false,
-        qIndex: 0
-      },
-      { 
-        title: "",
-        description: "",
-        right: false,
-        qIndex: 0
-      }
+      generateAnswerObject(0),
+      generateAnswerObject(0)
     ]
   }
 }
@@ -106,8 +96,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         items: {
           ...state.items,
-          answers: state.items.answers.map((answer, index) => {
-            return (index === action.payload.index) ? 
+          answers: state.items.answers.map((answer) => {
+            return (answer.id === action.payload.answerId) ? 
               {
                 ...answer,
                 right: !answer.right
@@ -125,7 +115,7 @@ export default function reducer(state = initialState, action) {
           ...state.items,
           answers: [
             ...state.items.answers,
-            action.payload
+            generateAnswerObject(action.payload)
           ]
         }
       }
@@ -136,11 +126,12 @@ export default function reducer(state = initialState, action) {
           ...state.items,
           questions: [
             ...state.items.questions,
-            action.payload.question
+            generateQuestionObject()
           ],
           answers: [
             ...state.items.answers,
-            ...action.payload.answers
+            generateAnswerObject(action.payload + 1),
+            generateAnswerObject(action.payload + 1)
           ]
         }
     }
@@ -184,46 +175,23 @@ export const onChangeDescription = (value, index) => {
   };
 }
 
-export const onChangeCheckbox = (value, index) => {
+export const onChangeCheckbox = (value, answerId) => {
   return { 
     type: 'update/checkbox',
-    payload: { value, index } 
+    payload: { value, answerId } 
   };
 }
 export const onAddAnswer = (qIndex) => {
   return {
     type: 'add/answer',
-    payload: { 
-      title: "",
-      description: "",
-      right: false,
-      qIndex
-    }
+    payload: qIndex
   };
 }
 
 export const onAddQuestion = (qIndex) => {
   return {
     type: 'add/question',
-    payload: { 
-      question: {
-        text: ""
-      },
-      answers: [
-        { 
-          title: "",
-          description: "",
-          right: false,
-          qIndex: qIndex + 1
-        },
-        { 
-          title: "",
-          description: "",
-          right: false,
-          qIndex: qIndex + 1
-        }
-      ]
-    }
+    payload: qIndex
   };
 }
 

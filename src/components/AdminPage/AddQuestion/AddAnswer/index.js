@@ -14,12 +14,11 @@ import {
   onChangeCheckbox 
 } from '../../../../redux/features/addTest';
 
-
-const AddAnswer = ({ answerIndex, questionIndex, index, answer }) => {
+const AddAnswer = ({ questionIndex, index, answer }) => {
   const dispatch = useDispatch();
 
   const handleChangeCheckbox = (e) => {
-    dispatch(onChangeCheckbox(e.target.value, index));
+    dispatch(onChangeCheckbox(e.target.value, answer.id));
   }
 
   const handleChangeAnswer = (e) => {
@@ -43,10 +42,10 @@ const AddAnswer = ({ answerIndex, questionIndex, index, answer }) => {
       </div>
       <Checkbox
         checked={answer.right}
-        id={`check_${index + 1}_${questionIndex}`}
+        id={`check_${answer.id}`}
         onChange={handleChangeCheckbox}
       />
-      <Label htmlFor={`check_${index + 1}_${questionIndex}`}>
+      <Label htmlFor={`check_${answer.id}`}>
         это правильный вариант ответа
       </Label>
       {answer.right && (

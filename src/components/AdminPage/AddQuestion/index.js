@@ -47,7 +47,7 @@ const AddQuestion = ({ question, questionIndex }) => {
           </TextAnswers>
           {answers.map((answer, index) => (
             <AddAnswer 
-              key={index}
+              key={answer.id}
               answerIndex={answer.qIndex}
               questionIndex={questionIndex}
               index={index}
