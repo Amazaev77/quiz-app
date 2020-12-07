@@ -26,7 +26,7 @@ const Question = () => {
   return (
     <Content>
       {loadingQuestion && <PreloaderQuestion />}
-      <QuestionText>{question?.text}</QuestionText>
+      <QuestionText>{question.text}</QuestionText>
       {loadingAnswer && <PreloaderAnswers />}
       <Answers question={question} />
       <SwitchButton

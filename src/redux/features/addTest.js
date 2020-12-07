@@ -170,22 +170,22 @@ export const onChangeDescription = (value, index) => {
   };
 };
 
-export const onChangeCheckbox = (value, answerId) => {
-  return {
-    type: "update/checkbox",
-    payload: { value, answerId },
-  };
-};
 export const onAddAnswer = (qIndex) => {
   return {
     type: "add/answer",
     payload: qIndex,
   };
 };
-
 export const onAddQuestion = (qIndex) => {
   return {
     type: "add/question",
     payload: qIndex,
+  };
+};
+
+export const onChangeCheckbox = (value, answerId) => {
+  return {
+    type: "update/checkbox",
+    payload: { value, answerId },
   };
 };

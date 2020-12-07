@@ -23,7 +23,7 @@ const TextField = ({
   };
 
   const handleChangeTextField = (e) => {
-    return onChange(e.target.value);
+    onChange(e.target.value);
   };
 
   return (

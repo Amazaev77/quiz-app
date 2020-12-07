@@ -3,7 +3,7 @@ import { QuestionNumber, Inner } from "./style";
 import Wrapper from "./Wrapper";
 import PropTypes from "prop-types";
 
-const AddQuestion = ({ question, questionIndex }) => {
+const Question = ({ question, questionIndex }) => {
   return (
     <div>
       <Inner>
@@ -14,9 +14,9 @@ const AddQuestion = ({ question, questionIndex }) => {
   );
 };
 
-AddQuestion.propTypes = {
+Question.propTypes = {
   question: PropTypes.object.isRequired,
   questionIndex: PropTypes.number.isRequired,
 };
 
-export default AddQuestion;
+export default Question;

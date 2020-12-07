@@ -23,6 +23,10 @@ const App = () => {
 
   useEffect(() => {
     dispatch(loadTests());
+    /*
+    *  Сразу загружаю вопросы, так как используется фейковый сервер
+    *  и нужно узнать количество вопросов
+    * */
     dispatch(loadQuestions());
   }, [dispatch]);
 

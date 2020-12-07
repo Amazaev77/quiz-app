@@ -15,11 +15,11 @@ const TestStart = () => {
   let history = useHistory();
 
   const test = useSelector((state) =>
-    state.tests.items.find((item) => item.id.toString() === id)
+    state.tests.items.find((test) => test.id.toString() === id)
   );
 
   const questions = useSelector((state) =>
-    state.questions.items.filter((item) => item.testId.toString() === id)
+    state.questions.items.filter((question) => question.testId.toString() === id)
   );
 
   function handleClick() {
@@ -27,14 +27,15 @@ const TestStart = () => {
     dispatch(offSelectedAnswer());
   }
 
+  // Перекидывает на главную страницу, если элемента с нужным id нет
   if (!test) {
     return <Redirect to="/" />;
   }
 
   return (
     <Content>
-      <Title>{test?.title}</Title>
-      <Subtitle>{test?.subtitle}</Subtitle>
+      <Title>{test.title}</Title>
+      <Subtitle>{test.subtitle}</Subtitle>
       <BtnBox>
         <Button onClick={handleClick}>Начать тест</Button>
       </BtnBox>

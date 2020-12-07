@@ -33,7 +33,7 @@ export const ButtonToAddQuestion = styled.button`
   outline: none;
 `;
 
-export const Or = styled.div`
+export const Separator = styled.div`
   color: rgba(0, 0, 0, 0.25);
   font-size: 18px;
   text-align: center;

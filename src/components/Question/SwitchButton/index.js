@@ -12,7 +12,7 @@ import {
 const SwitchButton = ({ questions, indexOfCurrentQuestion }) => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  let history = useHistory();
+  const history = useHistory();
 
   const answerSelected = useSelector((state) => state.answers.answerSelected);
 

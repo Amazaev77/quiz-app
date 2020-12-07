@@ -1,6 +1,5 @@
 import React from "react";
 import TextField from "../../../../TextField";
-import {} from "../style";
 import Answers from "./Answers";
 import { Border, WrapperNumberAnswer } from "../../../../styled/Lib";
 import Button from "../../../../Button";
@@ -15,7 +14,7 @@ import {
   AddAnswerText,
   BigButton,
   ButtonToAddQuestion,
-  Or,
+  Separator,
   TextAnswers,
 } from "./style";
 
@@ -57,11 +56,13 @@ const Wrapper = ({ questionIndex, question }) => {
         <Border />
       </WrapperNumberAnswer>
       {questions.length - 1 === questionIndex && (
+        // todo
+        // Нужно будет вынести вверх и сделать по чище
         <>
           <ButtonToAddQuestion onClick={handleAddQuestion}>
             Добавить вопрос #{questions.length + 1}
           </ButtonToAddQuestion>
-          <Or>Или</Or>
+          <Separator>Или</Separator>
           <BigButton>
             <Button>Опубликовать тест</Button>
           </BigButton>
