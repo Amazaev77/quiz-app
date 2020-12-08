@@ -60,8 +60,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         items: {
           ...state.items,
-          answers: state.items.answers.map((answer, index) => {
-            return index === action.payload.index
+          answers: state.items.answers.map((answer) => {
+            return answer.id === action.payload.id
               ? {
                   ...answer,
                   title: action.payload.value,
@@ -77,8 +77,8 @@ export default function reducer(state = initialState, action) {
         ...state,
         items: {
           ...state.items,
-          answers: state.items.answers.map((answer, index) => {
-            return index === action.payload.index
+          answers: state.items.answers.map((answer) => {
+            return answer.id === action.payload.id
               ? {
                   ...answer,
                   description: action.payload.value,
@@ -156,17 +156,17 @@ export const onChangeQuestion = (value, index) => {
   };
 };
 
-export const onChangeAnswer = (value, index) => {
+export const onChangeAnswer = (value, id) => {
   return {
     type: "update/answer",
-    payload: { value, index },
+    payload: { value, id },
   };
 };
 
-export const onChangeDescription = (value, index) => {
+export const onChangeDescription = (value, id) => {
   return {
     type: "update/description",
-    payload: { value, index },
+    payload: { value, id },
   };
 };
 

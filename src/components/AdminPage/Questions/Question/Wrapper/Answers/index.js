@@ -1,10 +1,10 @@
 import React from "react";
-import AddAnswer from "./AddAnswer";
+import Answer from "./Answer";
 import PropTypes from "prop-types";
 
 const Answers = ({ answers }) => {
   return answers.map((answer, index) => (
-    <AddAnswer key={answer.id} index={index} answer={answer} />
+    <Answer key={answer.id} index={index} answer={answer} />
   ));
 };
 

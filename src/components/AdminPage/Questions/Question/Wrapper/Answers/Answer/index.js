@@ -11,7 +11,7 @@ import {
 } from "../../../../../../../redux/features/addTest";
 import PropTypes from "prop-types";
 
-const AddAnswer = ({ index, answer }) => {
+const Answer = ({ index, answer }) => {
   const dispatch = useDispatch();
 
   const handleChangeCheckbox = (e) => {
@@ -19,11 +19,11 @@ const AddAnswer = ({ index, answer }) => {
   };
 
   const handleChangeAnswer = (e) => {
-    dispatch(onChangeAnswer(e, index));
+    dispatch(onChangeAnswer(e, answer.id));
   };
 
   const handleChangeDescription = (e) => {
-    dispatch(onChangeDescription(e, index));
+    dispatch(onChangeDescription(e, answer.id));
   };
 
   return (
@@ -64,9 +64,9 @@ const AddAnswer = ({ index, answer }) => {
   );
 };
 
-AddAnswer.propTypes = {
+Answer.propTypes = {
   answer: PropTypes.object.isRequired,
   index: PropTypes.number.isRequired,
 };
 
-export default AddAnswer;
+export default Answer;

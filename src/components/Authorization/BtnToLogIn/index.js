@@ -12,6 +12,7 @@ import Button from "../../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../redux/features/authorization";
 import { useHistory } from "react-router-dom";
+import { useHotkeys } from 'react-hotkeys-hook'
 
 function BtnToLogIn({ text, pass }) {
   const dispatch = useDispatch();
@@ -19,17 +20,15 @@ function BtnToLogIn({ text, pass }) {
 
   const error = useSelector((state) => state.authorization.error);
   const authorizing = useSelector((state) => state.authorization.authorizing);
+  const token = useSelector(state => state.authorization.token);
 
   const handleLogin = () => {
-    history.push("/");
+    if (token) {
+      history.push("/");
+    }
     dispatch(login(text, pass));
   };
-
-  // const handleKeyDown = (e) => {
-  //   if (e.keyCode === 13 && !token) {
-  //     handleLogin();
-  //   }
-  // }
+  useHotkeys('enter', handleLogin);
 
   return (
     <BtnAuth>
