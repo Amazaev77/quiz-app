@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyledInput, StyledTextarea, StyledWrapperTextField } from "./style";
 import PlaceHolder from "./PlaceHolder";
 import PropTypes from "prop-types";
+import Icon from '../Authorization/Icon'
 
 const TextField = ({
   placeHolder,
@@ -11,6 +12,8 @@ const TextField = ({
   textAlign,
   textarea,
   miniSize,
+  showPass,
+  setShowPass
 }) => {
   const [focus, setFocus] = useState(false);
 
@@ -56,6 +59,12 @@ const TextField = ({
           miniSize={miniSize}
         />
       )}
+        {type === "password" && (
+          <Icon
+            showPass={showPass}
+            setShowPass={setShowPass}
+          />
+        )}
     </StyledWrapperTextField>
   );
 };
@@ -68,6 +77,8 @@ TextField.propTypes = {
   textAlign: PropTypes.string,
   textarea: PropTypes.bool,
   miniSize: PropTypes.bool,
+  showPass: PropTypes.bool,
+  setShowPas: PropTypes.func
 };
 
 export default TextField;

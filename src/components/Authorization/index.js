@@ -24,12 +24,9 @@ const Authorization = () => {
         type={showPass ? "text" : "password"}
         textAlign="center"
         placeHolder="Введите пароль"
+        setShowPass={setShowPass}
+        showPass={showPass}
       />
-      {/*
-        Нужно будет перенести иконку в компонент,
-        но с этим небольшие проблемы оставил на потом
-       */}
-      {/*<Icon />*/}
       <BtnToLogIn text={text} pass={pass} />
     </StyledAuthorization>
   );

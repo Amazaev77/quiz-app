@@ -1,19 +1,11 @@
-const SHOW = "show/password";
-
 const initialState = {
   token: localStorage.getItem("auth-token"),
   authorizing: false,
   error: false,
-  showPass: false,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case SHOW:
-      return {
-        ...state,
-        showPass: !state.showPass,
-      };
     case "auth/start":
       return {
         ...state,
@@ -35,10 +27,6 @@ export default function reducer(state = initialState, action) {
       return state;
   }
 }
-
-export const onToggleShowPassword = () => {
-  return { type: SHOW };
-};
 
 export const login = (login, password) => {
   return (dispatch) => {

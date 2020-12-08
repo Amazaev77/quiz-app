@@ -1,16 +1,45 @@
 import React from "react";
-import { QuestionNumber, Inner } from "./style";
+import {
+  QuestionNumber,
+  Inner,
+  Separator,
+  BigButton,
+  ButtonToAddQuestion,
+  SeparateBlock
+} from "./style";
 import Wrapper from "./Wrapper";
 import PropTypes from "prop-types";
+import { onAddQuestion } from '../../../../redux/features/addTest';
+import { useDispatch, useSelector } from 'react-redux';
+import Button from '../../../Button';
 
 const Question = ({ question, questionIndex }) => {
+  const dispatch = useDispatch();
+
+  const questions = useSelector((state) => state.addTest.items.questions);
+
+  const handleAddQuestion = () => {
+    dispatch(onAddQuestion(questionIndex));
+  };
+
   return (
-    <div>
+    <>
       <Inner>
         <QuestionNumber>#{questionIndex + 1}</QuestionNumber>
         <Wrapper questionIndex={questionIndex} question={question} />
       </Inner>
-    </div>
+      {(questions.length - 1 === questionIndex) && (
+        <SeparateBlock>
+          <ButtonToAddQuestion onClick={handleAddQuestion}>
+            Добавить вопрос #{questions.length + 1}
+          </ButtonToAddQuestion>
+          <Separator>Или</Separator>
+          <BigButton>
+            <Button>Опубликовать тест</Button>
+          </BigButton>
+        </SeparateBlock>
+        )}
+    </>
   );
 };
 

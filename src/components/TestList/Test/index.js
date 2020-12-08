@@ -5,16 +5,16 @@ import { LengthQuestions, TestName, StyledTest } from "./style";
 import PropTypes from "prop-types";
 
 const Test = ({ test }) => {
-  const questionLength = useSelector((state) => {
+  const filteredQuestion = useSelector((state) => {
     return state.questions.items.filter(
       (question) => question.testId === test.id
-    ).length;
+    );
   });
 
   return (
     <StyledTest to={`/${test.id}`}>
       <TestName>{test.title}</TestName>
-      <LengthQuestions>{questionLength} вопросов</LengthQuestions>
+      <LengthQuestions>{filteredQuestion.length} вопросов</LengthQuestions>
       <PileBox />
     </StyledTest>
   );
