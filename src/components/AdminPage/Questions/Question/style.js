@@ -7,7 +7,8 @@ export const Inner = styled.div`
 export const QuestionNumber = styled.div`
   color: #e5e5e5;
   font-size: 72px;
-  margin: 30px 82px 0 0;
+  margin: 30px 0 0 0;
+  width: 166px;
 `;
 
 export const ButtonToAddQuestion = styled.button`
@@ -39,7 +40,14 @@ export const BigButton = styled.div`
   margin: auto;
 `;
 
-export const SeparateBlock = styled.div`
-  float: right;
-  width: 943px;
+export const SeparateBox = styled.div`
+  display: flex;
+`;
+
+export const EmptyBlock = styled.div`
+  width: 166px;
+`;
+
+export const Item = styled.div`
+  flex: 1;
 `;

@@ -11,14 +11,17 @@ import spinner from "../../../icons/spinner.svg";
 import Button from "../../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../redux/features/authorization";
+import { useHistory } from "react-router-dom";
 
 function BtnToLogIn({ text, pass }) {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const error = useSelector((state) => state.authorization.error);
   const authorizing = useSelector((state) => state.authorization.authorizing);
 
   const handleLogin = () => {
+    history.push("/");
     dispatch(login(text, pass));
   };
 

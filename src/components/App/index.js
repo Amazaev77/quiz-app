@@ -7,9 +7,18 @@ import { loadTests } from "../../redux/features/tests";
 import { useRoute } from '../../hooks/useRoutes'
 
 const App = () => {
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(loadTests());
+    /*
+     *  Сразу загружаю вопросы, так как используется фейковый сервер
+     *  и нужно узнать количество вопросов
+     * */
+    dispatch(loadQuestions());
+  }, [dispatch]);
 
   const routes = useRoute();
-
 
   return (
     <StyledApp>

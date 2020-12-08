@@ -5,6 +5,10 @@ import { LengthQuestions, TestName, StyledTest } from "./style";
 import PropTypes from "prop-types";
 
 const Test = ({ test }) => {
+  /* 
+  * фильтрация для того чтобы получить 
+  * вопросы текущего теста, чтобы дальше получить их количество
+  */
   const filteredQuestion = useSelector((state) => {
     return state.questions.items.filter(
       (question) => question.testId === test.id

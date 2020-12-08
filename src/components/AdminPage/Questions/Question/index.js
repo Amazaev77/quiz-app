@@ -5,7 +5,9 @@ import {
   Separator,
   BigButton,
   ButtonToAddQuestion,
-  SeparateBlock
+  SeparateBox,
+  EmptyBlock,
+  Item
 } from "./style";
 import Wrapper from "./Wrapper";
 import PropTypes from "prop-types";
@@ -29,15 +31,18 @@ const Question = ({ question, questionIndex }) => {
         <Wrapper questionIndex={questionIndex} question={question} />
       </Inner>
       {(questions.length - 1 === questionIndex) && (
-        <SeparateBlock>
-          <ButtonToAddQuestion onClick={handleAddQuestion}>
-            Добавить вопрос #{questions.length + 1}
-          </ButtonToAddQuestion>
-          <Separator>Или</Separator>
-          <BigButton>
-            <Button>Опубликовать тест</Button>
-          </BigButton>
-        </SeparateBlock>
+        <SeparateBox>
+          <EmptyBlock />
+          <Item>
+            <ButtonToAddQuestion onClick={handleAddQuestion}>
+              Добавить вопрос #{questions.length + 1}
+            </ButtonToAddQuestion>
+            <Separator>Или</Separator>
+            <BigButton>
+              <Button>Опубликовать тест</Button>
+            </BigButton>
+          </Item>
+        </SeparateBox>
         )}
     </>
   );

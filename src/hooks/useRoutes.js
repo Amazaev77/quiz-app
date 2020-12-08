@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Redirect, Route, Switch } from 'react-router-dom';
 import AdminPage from '../components/AdminPage';
 import Result from '../components/Result';
@@ -6,45 +6,68 @@ import Question from '../components/Question';
 import TestStart from '../components/TestStart';
 import TestList from '../components/TestList';
 import Authorization from '../components/Authorization';
-import React, { useEffect } from 'react'
-import { loadTests } from '../redux/features/tests'
-import { loadQuestions } from '../redux/features/questions'
+
+const routes = [
+  {
+    path: '/auth',
+    component: Authorization,
+    exact: false,
+    requiredAuth: false
+  },
+  {
+    path: '/admin',
+    component: AdminPage,
+    exact: false,
+    requiredAuth: true
+  },
+  {
+    path: '/:id/result',
+    component: Result,
+    exact: false,
+    requiredAuth: false
+  },
+  {
+    path: '/:id/:questionId',
+    component: Question,
+    exact: true,
+    requiredAuth: false
+  },
+  {
+    path: '/:id',
+    component: TestStart,
+    exact: false,
+    requiredAuth: false
+  },
+  {
+    path: '/',
+    component: TestList,
+    exact: false,
+    requiredAuth: false
+  }
+]
+
 
 export const useRoute = () => {
-  const dispatch = useDispatch();
-
-
-  useEffect(() => {
-    dispatch(loadTests());
-    /*
-     *  Сразу загружаю вопросы, так как используется фейковый сервер
-     *  и нужно узнать количество вопросов
-     * */
-    dispatch(loadQuestions());
-  }, [dispatch]);
-  const token = useSelector((state) => state.authorization.token);
-
-  let routes;
-
-  if (token) {
-    routes = (
-      <Switch>
-        <Route path="/admin" component={AdminPage} />
-        <Route path="/:id/result" component={Result} />
-        <Route path="/:id/:questionId" component={Question} />
-        <Route path="/:id" component={TestStart} />
-        <Route path="/" exact component={TestList} />
-        <Redirect to="/" />
-        <Route>404</Route>
-      </Switch>
-    );
-  } else {
-    routes = (
-      <Switch>
-        <Route path="/auth" component={Authorization} />
-        <Redirect to="/auth" />
-      </Switch>
-    );
-  }
-  return routes;
+  const token = useSelector(state => state.authorization.token);
+  
+  return (
+    <Switch>
+      {routes.map((route, index) => {
+        if (route.requiredAuth && !token) {
+          return null;
+        }
+          return (
+            <Route 
+              key={index}
+              path={route.path} 
+              exact={route.exact} 
+              component={route.component}
+            />
+          )
+      }
+      )}
+      <Redirect to='/' />
+      <Route>404</Route>
+    </Switch>
+  )
 }

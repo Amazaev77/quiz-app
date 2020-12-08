@@ -7,6 +7,7 @@ import BtnToLogIn from "./BtnToLogIn";
 const Authorization = () => {
   const [text, setText] = useState("");
   const [pass, setPass] = useState("");
+
   const [showPass, setShowPass] = useState(false);
 
   return (

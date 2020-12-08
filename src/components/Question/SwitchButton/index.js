@@ -17,11 +17,14 @@ const SwitchButton = ({ questions, indexOfCurrentQuestion }) => {
   const answerSelected = useSelector((state) => state.answers.answerSelected);
 
   const onTogglePage = () => {
-    dispatch(offSelectedAnswer());
-
     if (indexOfCurrentQuestion + 1 < questions.length) {
       dispatch(onNextQuestion());
-    } else {
+    } 
+    if (indexOfCurrentQuestion === questions.length - 1) {
+      dispatch(offSelectedAnswer());
+    }
+    
+    else {
       history.push(`/${id}/result`);
       dispatch(onResetIndex());
     }
