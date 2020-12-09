@@ -8,19 +8,21 @@ import PreloaderQuestion from "./PreloaderQuestion";
 import PreloaderAnswers from "./PreloaderAnswers";
 import SwitchButton from "./SwitchButton";
 import Answers from "./Answers";
+import {filterQuestionSelector} from "../../redux/features/answers";
 
 const Question = () => {
-  const { id } = useParams();
+  const id = parseInt(useParams().id);
 
   const loadingQuestion = useSelector((state) => state.questions.loading);
+
   const loadingAnswer = useSelector((state) => state.answers.loading);
+
   const indexOfCurrentQuestion = useSelector(
     (state) => state.questions.indexOfCurrentQuestion
   );
 
-  const questions = useSelector((state) =>
-    state.questions.items.filter((item) => item.testId.toString() === id)
-  );
+  const questions = useSelector(filterQuestionSelector(id));
+
   const question = questions[indexOfCurrentQuestion];
 
   return (
@@ -30,7 +32,6 @@ const Question = () => {
       {loadingAnswer && <PreloaderAnswers />}
       <Answers question={question} />
       <SwitchButton
-        questions={questions}
         indexOfCurrentQuestion={indexOfCurrentQuestion}
       />
       {!loadingAnswer && (

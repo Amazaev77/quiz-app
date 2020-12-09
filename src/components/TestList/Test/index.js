@@ -6,10 +6,10 @@ import PropTypes from "prop-types";
 
 const Test = ({ test }) => {
   /* 
-  * фильтрация для того чтобы получить 
-  * вопросы текущего теста, чтобы дальше получить их количество
+  * Так как сервер фейковый нужно получить количество вопросов,
+  * поэтому фильтруем вопросы по текущему тесту
   */
-  const filteredQuestion = useSelector((state) => {
+  const filteredQuestions = useSelector((state) => {
     return state.questions.items.filter(
       (question) => question.testId === test.id
     );
@@ -18,7 +18,7 @@ const Test = ({ test }) => {
   return (
     <StyledTest to={`/${test.id}`}>
       <TestName>{test.title}</TestName>
-      <LengthQuestions>{filteredQuestion.length} вопросов</LengthQuestions>
+      <LengthQuestions>{filteredQuestions.length} вопросов</LengthQuestions>
       <PileBox />
     </StyledTest>
   );

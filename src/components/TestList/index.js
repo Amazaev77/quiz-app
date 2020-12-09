@@ -1,21 +1,23 @@
 import React from "react";
 import Test from "./Test";
 import { useSelector } from "react-redux";
-import { StyledTestList, AddTest } from "./style";
+import { StyledTestList, AddTestLink } from "./style";
 import PileBox from "../PileBox";
+import { useAuth } from "../../hooks/useAuth";
 
 const TestList = () => {
   const tests = useSelector((state) => state.tests.items);
-  const token = useSelector((state) => state.authorization.token);
+  const isAuth = useAuth();
 
   return (
     <StyledTestList>
-      {token && (
-        <AddTest to="/admin">
+      {isAuth && (
+        <AddTestLink to="/admin">
           Добавить Тест
           <PileBox />
-        </AddTest>
+        </AddTestLink>
       )}
+
       {tests.map((test) => (
         <Test key={test.id} test={test} />
       ))}

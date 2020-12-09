@@ -8,6 +8,8 @@ import { useRoute } from '../../hooks/useRoutes'
 
 const App = () => {
   const dispatch = useDispatch();
+
+  const routes = useRoute();
   
   useEffect(() => {
     dispatch(loadTests());
@@ -17,8 +19,6 @@ const App = () => {
      * */
     dispatch(loadQuestions());
   }, [dispatch]);
-
-  const routes = useRoute();
 
   return (
     <StyledApp>

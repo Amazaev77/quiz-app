@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux'
 import { Redirect, Route, Switch } from 'react-router-dom';
 import AdminPage from '../components/AdminPage';
 import Result from '../components/Result';
@@ -6,6 +5,7 @@ import Question from '../components/Question';
 import TestStart from '../components/TestStart';
 import TestList from '../components/TestList';
 import Authorization from '../components/Authorization';
+import { useAuth } from './useAuth';
 
 const routes = [
   {
@@ -46,28 +46,28 @@ const routes = [
   }
 ]
 
-
 export const useRoute = () => {
-  const token = useSelector(state => state.authorization.token);
+  const isAuth = useAuth();
   
   return (
     <Switch>
-      {routes.map((route, index) => {
-        if (route.requiredAuth && !token) {
+      {routes.map((route) => {
+        //todo 
+        if (route.requiredAuth && !isAuth) {
           return null;
         }
-          return (
-            <Route 
-              key={index}
-              path={route.path} 
-              exact={route.exact} 
-              component={route.component}
-            />
-          )
+        
+        return (
+          <Route 
+            key={route.path}
+            path={route.path} 
+            exact={route.exact} 
+            component={route.component}
+          />
+        )
       }
       )}
       <Redirect to='/' />
-      <Route>404</Route>
     </Switch>
   )
 }

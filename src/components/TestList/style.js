@@ -9,7 +9,7 @@ export const StyledTestList = styled.div`
   justify-content: space-between;
 `;
 
-export const AddTest = styled(Link)`
+export const AddTestLink = styled(Link)`
   width: 570px;
   height: 260px;
   margin-bottom: 40px;
@@ -18,6 +18,6 @@ export const AddTest = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 32px;
+  font-size: 2em;
   color: rgba(0, 0, 0, 0.4);
 `;

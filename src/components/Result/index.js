@@ -6,6 +6,7 @@ import { Content, BtnBox } from "../styled/Lib";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { clearResults } from "../../redux/features/results";
+import {offSelectedAnswer} from "../../redux/features/answers";
 
 const Result = () => {
   let history = useHistory();
@@ -18,11 +19,13 @@ const Result = () => {
   const onToggleMenu = () => {
     history.push("/");
     dispatch(clearResults());
+      dispatch(offSelectedAnswer());
   };
 
   const startOverHandler = () => {
     history.push(`/${testId}/questions`);
     dispatch(clearResults());
+    dispatch(offSelectedAnswer());
   };
 
   return (

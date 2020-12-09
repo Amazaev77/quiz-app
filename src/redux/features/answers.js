@@ -42,6 +42,17 @@ export default function reducer(state = initialState, action) {
   }
 }
 
+export function onSelectAnswer(id) {
+  return {
+    type: UPDATE,
+    payload: id,
+  };
+}
+
+export function offSelectedAnswer() {
+  return { type: `${UPDATE}/answers` };
+}
+
 export function loadAnswers(id) {
   return (dispatch) => {
     dispatch({ type: `${LOAD}/started` });
@@ -57,13 +68,8 @@ export function loadAnswers(id) {
   };
 }
 
-export function onSelectAnswer(id) {
-  return {
-    type: UPDATE,
-    payload: id,
-  };
-}
-
-export function offSelectedAnswer() {
-  return { type: `${UPDATE}/answers` };
+export const filterQuestionSelector = (id) => {
+  return state => {
+    return state.questions.items.filter((item) => item.testId === id)
+  }
 }
