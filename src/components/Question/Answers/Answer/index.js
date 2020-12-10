@@ -8,8 +8,8 @@ import {
   AnswerSubtext,
 } from "./style";
 import { useDispatch, useSelector } from "react-redux";
-import { onSelectAnswer } from "../../../../redux/features/answers";
-import { onSaveAnswer } from "../../../../redux/features/results";
+import { selectAnswer } from "../../../../redux/features/answers";
+import { saveAnswer } from "../../../../redux/features/results";
 import { useParams } from "react-router-dom";
 
 const Answer = ({ answer, questionId }) => {
@@ -26,9 +26,9 @@ const Answer = ({ answer, questionId }) => {
 
   const handleSelectAnswer = () => {
     if (!answerSelected) {
-      dispatch(onSelectAnswer(answer.id));
+      dispatch(selectAnswer(answer.id));
       dispatch(
-        onSaveAnswer({
+          saveAnswer({
           testId,
           questionId,
           answerId: answer.id,

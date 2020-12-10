@@ -5,21 +5,21 @@ import TextField from "../TextField";
 import Questions from "./Questions";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  onChangeTestTitle,
-  onChangeTestSubtitle,
-} from "../../redux/features/addTest";
+  changeTestTitle,
+    changeTestSubtitle,
+} from "../../redux/features/adminPanel";
 
 const AdminPage = () => {
   const dispatch = useDispatch();
 
-  const test = useSelector((state) => state.addTest.items.test);
+  const test = useSelector((state) => state.adminPanel.test);
 
   const handleTestTitle = (value) => {
-    dispatch(onChangeTestTitle(value));
+    dispatch(changeTestTitle(value));
   };
 
   const handleTestSubtitle = (value) => {
-    dispatch(onChangeTestSubtitle(value));
+    dispatch(changeTestSubtitle(value));
   };
 
   return (

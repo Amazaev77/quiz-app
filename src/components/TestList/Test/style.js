@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const StyledTest = styled(Link)`
+export const StyledTestLink = styled(Link)`
   width: 570px;
   height: 260px;
   margin-bottom: 40px;

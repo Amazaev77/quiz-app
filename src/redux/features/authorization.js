@@ -39,12 +39,12 @@ export const login = (login, password) => {
           localStorage.setItem("auth-token", json.token);
           dispatch({
             type: "auth/succeed",
-            payload: json,
+            payload: json
           });
         } else {
           dispatch({
             type: "auth/failed",
-            payload: json,
+            payload: json
           });
         }
       });

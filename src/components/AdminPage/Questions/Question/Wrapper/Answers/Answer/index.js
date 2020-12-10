@@ -5,25 +5,25 @@ import checkIcon from "../../../../../../../icons/check.svg";
 import TextField from "../../../../../../TextField";
 import { useDispatch } from "react-redux";
 import {
-  onChangeAnswer,
-  onChangeDescription,
-  onChangeCheckbox,
-} from "../../../../../../../redux/features/addTest";
+  changeAnswer,
+  changeDescription,
+  changeCheckbox,
+} from "../../../../../../../redux/features/adminPanel";
 import PropTypes from "prop-types";
 
 const Answer = ({ index, answer }) => {
   const dispatch = useDispatch();
 
   const handleChangeCheckbox = (e) => {
-    dispatch(onChangeCheckbox(e.target.value, answer.id));
+    dispatch(changeCheckbox(e.target.value, answer.id));
   };
 
   const handleChangeAnswer = (e) => {
-    dispatch(onChangeAnswer(e, answer.id));
+    dispatch(changeAnswer(e, answer.id));
   };
 
   const handleChangeDescription = (e) => {
-    dispatch(onChangeDescription(e, answer.id));
+    dispatch(changeDescription(e, answer.id));
   };
 
   return (

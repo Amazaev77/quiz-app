@@ -1,40 +1,37 @@
-const LOAD = "answers/load";
-const UPDATE = "answers/update";
-
 const initialState = {
   loading: false,
   items: [],
   answerSelected: false,
-  answerSelectedId: null,
+  answerSelectedId: null
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case `${LOAD}/started`:
+    case 'answers/load/started':
       return {
         ...state,
         loading: true,
       };
 
-    case `${LOAD}/succeed`:
+    case 'answers/load/succeed':
       return {
         ...state,
         loading: false,
-        items: action.payload,
+        items: action.payload
       };
 
-    case UPDATE:
+    case 'select/answer':
       return {
         ...state,
         answerSelected: true,
-        answerSelectedId: action.payload,
+        answerSelectedId: action.payload
       };
 
-    case `${UPDATE}/answers`:
+    case 'un/select/answer':
       return {
         ...state,
         answerSelected: false,
-        items: [],
+        items: []
       };
 
     default:
@@ -42,27 +39,27 @@ export default function reducer(state = initialState, action) {
   }
 }
 
-export function onSelectAnswer(id) {
+export function selectAnswer(id) {
   return {
-    type: UPDATE,
-    payload: id,
+    type: 'select/answer',
+    payload: id
   };
 }
 
-export function offSelectedAnswer() {
-  return { type: `${UPDATE}/answers` };
+export function unSelectAnswer() {
+  return { type: 'un/select/answer' };
 }
 
 export function loadAnswers(id) {
   return (dispatch) => {
-    dispatch({ type: `${LOAD}/started` });
+    dispatch({ type: 'answers/load/started' });
 
     fetch(`http://localhost:3010/answers?questionId=${id}`)
       .then((response) => response.json())
       .then((answers) => {
         return dispatch({
-          type: `${LOAD}/succeed`,
-          payload: answers,
+          type: 'answers/load/succeed',
+          payload: answers
         });
       });
   };

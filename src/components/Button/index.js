@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export default styled.button`
   color: white;
-  background: ${({ authorizing }) =>
-    authorizing ? "rgb(120 139 177)" : "rgba(0, 51, 153, 1)"};
-  cursor: ${({ authorizing }) => (authorizing ? "none" : "pointer")};
+  background: ${({ waiting }) =>
+    waiting ? "rgb(120 139 177)" : "rgba(0, 51, 153, 1)"};
+  cursor: ${({ waiting }) => (waiting ? "none" : "pointer")};
   height: 3em;
   display: flex;
   justify-content: center;

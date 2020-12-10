@@ -12,7 +12,6 @@ import Button from "../../Button";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../../redux/features/authorization";
 import { useHistory } from "react-router-dom";
-import { useHotkeys } from 'react-hotkeys-hook'
 
 function BtnToLogIn({ text, pass }) {
   const dispatch = useDispatch();
@@ -28,7 +27,6 @@ function BtnToLogIn({ text, pass }) {
     }
     dispatch(login(text, pass));
   };
-  useHotkeys('enter', handleLogin);
 
   return (
     <BtnAuth>
@@ -45,7 +43,7 @@ function BtnToLogIn({ text, pass }) {
       <Button
         onClick={handleLogin}
         disabled={authorizing}
-        authorizing={authorizing}
+        waiting={authorizing}
       >
         Войти
       </Button>

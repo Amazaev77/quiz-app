@@ -11,18 +11,25 @@ import {
 } from "./style";
 import Wrapper from "./Wrapper";
 import PropTypes from "prop-types";
-import { onAddQuestion } from '../../../../redux/features/addTest';
+import { addQuestion, addTest } from '../../../../redux/features/adminPanel';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../../Button';
+import {BoxForSpinner, SpinnerForButton} from "../../../Authorization/BtnToLogIn/style";
+import spinner from "../../../../icons/spinner.svg";
 
 const Question = ({ question, questionIndex }) => {
   const dispatch = useDispatch();
 
-  const questions = useSelector((state) => state.addTest.items.questions);
+  const questions = useSelector((state) => state.adminPanel.questions);
+  const loading = useSelector((state) => state.adminPanel.loading);
 
   const handleAddQuestion = () => {
-    dispatch(onAddQuestion(questionIndex));
+    dispatch(addQuestion(questionIndex));
   };
+
+  const handleAddTest = () => {
+    dispatch(addTest());
+  }
 
   return (
     <>
@@ -39,7 +46,18 @@ const Question = ({ question, questionIndex }) => {
             </ButtonToAddQuestion>
             <Separator>Или</Separator>
             <BigButton>
-              <Button>Опубликовать тест</Button>
+              {loading && (
+                  <BoxForSpinner>
+                    <SpinnerForButton src={spinner} alt="loading" />
+                  </BoxForSpinner>
+              )}
+              <Button
+                onClick={handleAddTest}
+                disabled={loading}
+                waiting={loading}
+              >
+                Опубликовать тест
+              </Button>
             </BigButton>
           </Item>
         </SeparateBox>

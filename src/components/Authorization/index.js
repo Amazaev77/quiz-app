@@ -3,32 +3,41 @@ import { StyledAuthorization } from "./style";
 import TextField from "../TextField";
 import { TitlePage } from "../styled/Lib";
 import BtnToLogIn from "./BtnToLogIn";
+import { useSelector } from "react-redux";
+import { Redirect } from 'react-router-dom';
 
 const Authorization = () => {
   const [text, setText] = useState("");
   const [pass, setPass] = useState("");
 
   const [showPass, setShowPass] = useState(false);
+  const token = useSelector(state => state.authorization.token);
+
+  if (token) {
+    return <Redirect to='/'/>
+  }
 
   return (
     <StyledAuthorization>
       <TitlePage>Авторизация</TitlePage>
-      <TextField
-        value={text}
-        onChange={setText}
-        textAlign="center"
-        placeHolder="Введите логин"
-      />
-      <TextField
-        value={pass}
-        onChange={setPass}
-        type={showPass ? "text" : "password"}
-        textAlign="center"
-        placeHolder="Введите пароль"
-        setShowPass={setShowPass}
-        showPass={showPass}
-      />
-      <BtnToLogIn text={text} pass={pass} />
+      <form>
+        <TextField
+          value={text}
+          onChange={setText}
+          textAlign="center"
+          placeHolder="Введите логин"
+        />
+        <TextField
+          value={pass}
+          onChange={setPass}
+          type={showPass ? "text" : "password"}
+          textAlign="center"
+          placeHolder="Введите пароль"
+          setShowPass={setShowPass}
+          showPass={showPass}
+        />
+        <BtnToLogIn text={text} pass={pass} />
+      </form>
     </StyledAuthorization>
   );
 };

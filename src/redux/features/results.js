@@ -1,19 +1,16 @@
-const SAVE = "results/save";
-const CLEAR = "results/clear";
-
 const initialState = {
   items: [],
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case SAVE:
+    case 'results/save':
       return {
         ...state,
         items: [...state.items, action.payload],
       };
 
-    case CLEAR:
+    case 'results/clear':
       return {
         ...state,
         items: [],
@@ -23,13 +20,13 @@ export default function reducer(state = initialState, action) {
   }
 }
 
-export function onSaveAnswer(results) {
+export function saveAnswer(results) {
   return {
-    type: SAVE,
+    type: 'results/save',
     payload: results,
   };
 }
 
 export function clearResults() {
-  return { type: CLEAR };
+  return { type: 'results/clear' };
 }

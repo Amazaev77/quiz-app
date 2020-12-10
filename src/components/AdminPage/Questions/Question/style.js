@@ -38,6 +38,7 @@ export const BigButton = styled.div`
   width: 400px;
   height: 100px;
   margin: auto;
+  border-radius: 4px;
 `;
 
 export const SeparateBox = styled.div`

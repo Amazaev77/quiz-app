@@ -6,7 +6,7 @@ import questions from "./features/questions";
 import answers from "./features/answers";
 import results from "./features/results";
 import authorization from "./features/authorization";
-import addTest from "./features/addTest";
+import adminPanel from "./features/adminPanel";
 
 const rootReducer = combineReducers({
   tests,
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
   answers,
   results,
   authorization,
-  addTest,
+  adminPanel,
 });
 
 const logger = createLogger({

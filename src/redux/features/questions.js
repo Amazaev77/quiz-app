@@ -1,7 +1,3 @@
-const LOAD = "questions/load";
-const UPDATE = "questions/update";
-const RESET = "index/reset";
-
 const initialState = {
   loading: false,
   items: [],
@@ -10,26 +6,26 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case `${LOAD}/started`:
+    case 'questions/load/started':
       return {
         ...state,
         loading: true,
       };
 
-    case `${LOAD}/succeed`:
+    case 'questions/load/succeed':
       return {
         ...state,
         loading: false,
         items: action.payload,
       };
 
-    case UPDATE:
+    case 'questions/update':
       return {
         ...state,
         indexOfCurrentQuestion: state.indexOfCurrentQuestion + 1,
       };
 
-    case RESET:
+    case 'index/reset':
       return {
         ...state,
         indexOfCurrentQuestion: 0,
@@ -42,23 +38,23 @@ export default function reducer(state = initialState, action) {
 
 export function loadQuestions() {
   return (dispatch) => {
-    dispatch({ type: `${LOAD}/started` });
+    dispatch({ type: 'questions/load/started' });
 
     fetch("http://localhost:3010/questions")
       .then((response) => response.json())
       .then((questions) => {
         return dispatch({
-          type: `${LOAD}/succeed`,
+          type: 'questions/load/succeed',
           payload: questions,
         });
       });
   };
 }
 
-export function onNextQuestion() {
-  return { type: UPDATE };
+export function nextQuestion() {
+  return { type: 'questions/update' };
 }
 
-export function onResetIndex() {
-  return { type: RESET };
+export function resetIndex() {
+  return { type: 'index/reset' };
 }

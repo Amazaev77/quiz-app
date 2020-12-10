@@ -1,7 +1,7 @@
 import React from "react";
 import PileBox from "../../PileBox";
 import { useSelector } from "react-redux";
-import { LengthQuestions, TestName, StyledTest } from "./style";
+import { LengthQuestions, TestName, StyledTestLink } from "./style";
 import PropTypes from "prop-types";
 
 const Test = ({ test }) => {
@@ -16,11 +16,11 @@ const Test = ({ test }) => {
   });
 
   return (
-    <StyledTest to={`/${test.id}`}>
+    <StyledTestLink to={`/${test.id}`}>
       <TestName>{test.title}</TestName>
       <LengthQuestions>{filteredQuestions.length} вопросов</LengthQuestions>
       <PileBox />
-    </StyledTest>
+    </StyledTestLink>
   );
 };
 

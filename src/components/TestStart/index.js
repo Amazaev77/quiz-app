@@ -2,7 +2,7 @@ import React from "react";
 import PileBox from "../PileBox";
 import Button from "../Button";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Title, Subtitle, LengthQuestions } from "./style";
 import { useHistory, Redirect } from "react-router-dom";
 import { Content, BtnBox } from "../styled/Lib";

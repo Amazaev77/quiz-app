@@ -3,10 +3,10 @@ import { BtnBox } from "../../styled/Lib";
 import Button from "../../Button";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {filterQuestionSelector, offSelectedAnswer} from "../../../redux/features/answers";
+import { filterQuestionSelector, unSelectAnswer } from "../../../redux/features/answers";
 import {
-  onNextQuestion,
-  onResetIndex,
+  nextQuestion,
+  resetIndex,
 } from "../../../redux/features/questions";
 
 const SwitchButton = ({ indexOfCurrentQuestion }) => {
@@ -16,26 +16,26 @@ const SwitchButton = ({ indexOfCurrentQuestion }) => {
 
   const answerSelected = useSelector((state) => state.answers.answerSelected);
 
-  const onTogglePage = () => {
+  const handleTogglePage = () => {
     if (indexOfCurrentQuestion + 1 < questions.length) {
-      dispatch(onNextQuestion());
-      dispatch(offSelectedAnswer());
+      dispatch(nextQuestion());
+      dispatch(unSelectAnswer());
     }
     else {
       history.push(`/${id}/result`);
-      dispatch(onResetIndex());
+      dispatch(resetIndex());
     }
   };
 
   const questions = useSelector(filterQuestionSelector(id));
 
+  const isLastQuestion = indexOfCurrentQuestion === questions.length - 1;
+
   return (
     answerSelected && (
       <BtnBox>
-        <Button onClick={onTogglePage}>
-          {indexOfCurrentQuestion !== questions.length - 1
-            ? "Далее"
-            : "Завершить"}
+        <Button onClick={handleTogglePage}>
+          { isLastQuestion ? "Завершить" : "Далее" }
         </Button>
       </BtnBox>
     )

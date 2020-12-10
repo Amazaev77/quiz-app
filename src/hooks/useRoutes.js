@@ -10,39 +10,29 @@ import { useAuth } from './useAuth';
 const routes = [
   {
     path: '/auth',
-    component: Authorization,
-    exact: false,
-    requiredAuth: false
+    component: Authorization
   },
   {
     path: '/admin',
     component: AdminPage,
-    exact: false,
     requiredAuth: true
   },
   {
     path: '/:id/result',
-    component: Result,
-    exact: false,
-    requiredAuth: false
+    component: Result
   },
   {
     path: '/:id/:questionId',
     component: Question,
-    exact: true,
-    requiredAuth: false
+    exact: true
   },
   {
     path: '/:id',
-    component: TestStart,
-    exact: false,
-    requiredAuth: false
+    component: TestStart
   },
   {
     path: '/',
-    component: TestList,
-    exact: false,
-    requiredAuth: false
+    component: TestList
   }
 ]
 
@@ -52,7 +42,8 @@ export const useRoute = () => {
   return (
     <Switch>
       {routes.map((route) => {
-        //todo 
+        // Если требование к авторизации есть
+        // и пользователь не авторизован, route c компонентом не выводится
         if (route.requiredAuth && !isAuth) {
           return null;
         }

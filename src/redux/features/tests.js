@@ -1,6 +1,3 @@
-// Actions
-const LOAD = "tests/load";
-
 const initialState = {
   loading: true,
   items: [],
@@ -8,13 +5,13 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case `${LOAD}/started`:
+    case 'tests/load/started':
       return {
         ...state,
         loading: false,
       };
 
-    case `${LOAD}/succeed`:
+    case 'tests/load/succeed':
       return {
         ...state,
         loading: true,
@@ -28,13 +25,13 @@ export default function reducer(state = initialState, action) {
 
 export function loadTests() {
   return (dispatch) => {
-    dispatch({ type: `${LOAD}/started` });
+    dispatch({ type: 'tests/load/started' });
 
     fetch("http://localhost:3010/tests/")
       .then((response) => response.json())
       .then((tests) => {
         return dispatch({
-          type: `${LOAD}/succeed`,
+          type: 'tests/load/succeed',
           payload: tests,
         });
       });

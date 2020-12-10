@@ -3,9 +3,9 @@ import TextField from "../../../../TextField";
 import Answers from "./Answers";
 import { Border, WrapperNumberAnswer } from "../../../../styled/Lib";
 import {
-  onAddAnswer,
-  onChangeQuestion,
-} from "../../../../../redux/features/addTest";
+  addAnswer,
+  changeQuestion,
+} from "../../../../../redux/features/adminPanel";
 import { useDispatch, useSelector } from "react-redux";
 import {
   StyledWrapper,
@@ -17,15 +17,15 @@ const Wrapper = ({ questionIndex, question }) => {
   const dispatch = useDispatch();
 
   const answers = useSelector((state) =>
-    state.addTest.items.answers.filter((item) => item.qIndex === questionIndex)
+    state.adminPanel.answers.filter((item) => item.qIndex === questionIndex)
   );
 
   const handleChangeQuestion = (value) => {
-    dispatch(onChangeQuestion(value, questionIndex));
+    dispatch(changeQuestion(value, questionIndex));
   };
 
   const handleAddAnswer = () => {
-    dispatch(onAddAnswer(questionIndex));
+    dispatch(addAnswer(questionIndex));
   };
 
   return (
