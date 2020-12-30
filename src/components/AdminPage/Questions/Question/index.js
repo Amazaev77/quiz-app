@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
 import {
   QuestionNumber,
   Inner,
@@ -14,21 +14,30 @@ import PropTypes from "prop-types";
 import { addQuestion, addTest } from '../../../../redux/features/adminPanel';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../../Button';
-import {BoxForSpinner, SpinnerForButton} from "../../../Authorization/BtnToLogIn/style";
+import { BoxForSpinner, ErrorBlock, SpinnerForButton } from '../../../Authorization/BtnToLogIn/style'
 import spinner from "../../../../icons/spinner.svg";
+import { useHistory } from 'react-router-dom';
 
 const Question = ({ question, questionIndex }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
+  const [error, setError] = useState(null);
 
   const questions = useSelector((state) => state.adminPanel.questions);
   const loading = useSelector((state) => state.adminPanel.loading);
+  const test = useSelector((state) => state.adminPanel.test);
 
   const handleAddQuestion = () => {
     dispatch(addQuestion(questionIndex));
   };
 
   const handleAddTest = () => {
-    dispatch(addTest());
+    if (test.title.trim() && test.subtitle.trim()) {
+      dispatch(addTest());
+      history.push('/')
+    } else {
+      setError(true)
+    }
   }
 
   return (
@@ -50,6 +59,9 @@ const Question = ({ question, questionIndex }) => {
                   <BoxForSpinner>
                     <SpinnerForButton src={spinner} alt="loading" />
                   </BoxForSpinner>
+              )}
+              {error && (
+                <ErrorBlock error={error}>Поля пустые</ErrorBlock>
               )}
               <Button
                 onClick={handleAddTest}

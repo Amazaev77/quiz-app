@@ -46,12 +46,14 @@ const Answer = ({ index, answer }) => {
       {answer.right && <Check src={checkIcon} alt="check" />}
       <TextField
         miniSize={true}
+        answerRight={answer.right}
         value={answer.title}
         onChange={handleChangeAnswer}
         placeHolder={`Текст ответа #${index + 1}`}
       />
       <TextField
         textarea={true}
+        answerRight={answer.right}
         miniSize={true}
         value={answer.description}
         onChange={handleChangeDescription}

@@ -6,7 +6,7 @@ import Questions from "./Questions";
 import { useDispatch, useSelector } from "react-redux";
 import {
   changeTestTitle,
-    changeTestSubtitle,
+  changeTestSubtitle,
 } from "../../redux/features/adminPanel";
 
 const AdminPage = () => {

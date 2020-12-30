@@ -12,6 +12,7 @@ const ErrorBlockAnimate = keyframes`
 
 export const ErrorBlock = styled.div`
   text-align: center;
+  margin-top: ${({error}) => error && '10px'};
   font-size: 20px;
   color: #e70202;
   animation: ${ErrorBlockAnimate} 150ms ease-in forwards;

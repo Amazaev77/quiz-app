@@ -12,6 +12,7 @@ const TextField = ({
   textAlign,
   textarea,
   miniSize,
+  answerRight,
   showPass,
   setShowPass
 }) => {
@@ -48,6 +49,7 @@ const TextField = ({
           onChange={handleChangeTextField}
           value={value}
           miniSize={miniSize}
+          answerRight={answerRight}
         />
       ) : (
         <StyledInput
@@ -78,7 +80,8 @@ TextField.propTypes = {
   textarea: PropTypes.bool,
   miniSize: PropTypes.bool,
   showPass: PropTypes.bool,
-  setShowPas: PropTypes.func
+  setShowPas: PropTypes.func,
+  answerRight: PropTypes.bool
 };
 
 export default TextField;

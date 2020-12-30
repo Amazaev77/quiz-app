@@ -184,7 +184,7 @@ export const addTest = () => {
     const { test, questions, answers } = getState().adminPanel;
 
     dispatch({ type: "add/test/started" });
-    fetch("http://localhost:3010/tests", {
+    fetch("/tests", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -198,7 +198,7 @@ export const addTest = () => {
       .then((res) => res.json())
       .then((test) =>
         questions.forEach((question) =>
-          fetch("http://localhost:3010/questions", {
+          fetch("/questions", {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -212,7 +212,7 @@ export const addTest = () => {
             .then((res) => res.json())
             .then((json) =>
               answers.forEach((answer) =>
-                fetch("http://localhost:3010/answers", {
+                fetch("/answers", {
                   method: "POST",
                   headers: {
                     Accept: "application/json",

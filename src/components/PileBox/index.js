@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from 'react'
 import { StyledPileBox, Pile, PileSecond, PileThird } from "./style";
 
 const PileBox = () => {
@@ -11,4 +11,4 @@ const PileBox = () => {
   );
 };
 
-export default PileBox;
+export default memo(PileBox);

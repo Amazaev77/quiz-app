@@ -27,7 +27,7 @@ export function loadTests() {
   return (dispatch) => {
     dispatch({ type: 'tests/load/started' });
 
-    fetch("http://localhost:3010/tests/")
+    fetch("/tests/")
       .then((response) => response.json())
       .then((tests) => {
         return dispatch({

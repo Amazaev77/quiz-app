@@ -14,7 +14,7 @@ const Result = () => {
 
   const results = useSelector((state) => state.results.items);
   const filteredRightAnswers = results.filter((item) => item.right);
-  const testId = results[0].testId;
+  const testId = results[0]?.testId;
 
   const onToggleMenu = () => {
     history.push("/");

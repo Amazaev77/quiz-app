@@ -32,7 +32,7 @@ export const login = (login, password) => {
   return (dispatch) => {
     dispatch({ type: "auth/start" });
 
-    fetch(`http://localhost:3010/admin/?login=${login}&password=${password}`)
+    fetch(`/admin/?login=${login}&password=${password}`)
       .then((response) => response.json())
       .then((json) => {
         if (json.login === login && json.password === password) {

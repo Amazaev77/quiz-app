@@ -18,7 +18,12 @@ export const StyledInput = styled.input.attrs((props) => ({
 export const StyledTextarea = styled.textarea.attrs({ type: "text" })`
   width: 100%;
   height: ${({ miniSize }) => (miniSize ? "140px" : "200px")};
-  border: 0;
+  border: ${({ miniSize, answerRight }) =>
+    miniSize
+      ? answerRight
+        ? "1px solid rgba(18, 210, 2, 0.25)"
+        : "1px solid rgba(231, 2, 2, 0.25)"
+      : 0};
   font-size: ${({ miniSize }) => (miniSize ? "27px" : "32px")};
   padding: 1em;
   outline: none;

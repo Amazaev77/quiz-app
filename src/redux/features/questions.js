@@ -40,7 +40,7 @@ export function loadQuestions() {
   return (dispatch) => {
     dispatch({ type: 'questions/load/started' });
 
-    fetch("http://localhost:3010/questions")
+    fetch("/questions")
       .then((response) => response.json())
       .then((questions) => {
         return dispatch({

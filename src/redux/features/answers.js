@@ -54,7 +54,7 @@ export function loadAnswers(id) {
   return (dispatch) => {
     dispatch({ type: 'answers/load/started' });
 
-    fetch(`http://localhost:3010/answers?questionId=${id}`)
+    fetch(`/answers?questionId=${id}`)
       .then((response) => response.json())
       .then((answers) => {
         return dispatch({
