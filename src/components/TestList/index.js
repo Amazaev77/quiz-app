@@ -17,7 +17,6 @@ const TestList = () => {
           <PileBox />
         </AddTestLink>
       )}
-
       {tests.map((test) => (
         <Test key={test.id} test={test} />
       ))}

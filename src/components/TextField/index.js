@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { StyledInput, StyledTextarea, StyledWrapperTextField } from "./style";
 import PlaceHolder from "./PlaceHolder";
 import PropTypes from "prop-types";
-import Icon from '../Authorization/Icon';
 
 const TextField = ({
   placeHolder,
@@ -13,8 +12,6 @@ const TextField = ({
   textarea,
   miniSize,
   answerRight,
-  showPass,
-  setShowPass
 }) => {
   const [focus, setFocus] = useState(false);
 

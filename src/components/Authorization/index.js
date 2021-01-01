@@ -10,7 +10,6 @@ const Authorization = () => {
   const [text, setText] = useState("");
   const [pass, setPass] = useState("");
 
-  const [showPass, setShowPass] = useState(false);
   const token = useSelector(state => state.authorization.token);
 
   if (token) {
@@ -30,11 +29,9 @@ const Authorization = () => {
         <TextField
           value={pass}
           onChange={setPass}
-          type={showPass ? "text" : "password"}
+          type="password"
           textAlign="center"
           placeHolder="Введите пароль"
-          setShowPass={setShowPass}
-          showPass={showPass}
         />
         <BtnToLogIn text={text} pass={pass} />
       </form>
