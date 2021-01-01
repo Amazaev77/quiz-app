@@ -11,7 +11,7 @@
   * json-server - библиотека для создания фейкового сервера
   * еще react-loading-skeleton / redux-logger / prop-types / normalize.css
   
-### После установки приложения для запуска приложения нужно ввести команду `npm run dev` .
+### Для запуска приложения нужно ввести команду `npm run dev` .
   
   
   
