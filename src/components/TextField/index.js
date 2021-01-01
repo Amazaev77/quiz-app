@@ -61,12 +61,6 @@ const TextField = ({
           miniSize={miniSize}
         />
       )}
-        {type === "password" && (
-          <Icon
-            showPass={showPass}
-            setShowPass={setShowPass}
-          />
-        )}
     </StyledWrapperTextField>
   );
 };
