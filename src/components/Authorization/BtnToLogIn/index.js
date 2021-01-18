@@ -43,7 +43,6 @@ function BtnToLogIn({ text, pass }) {
       <Button
         onClick={handleLogin}
         disabled={authorizing}
-        waiting={authorizing}
       >
         Войти
       </Button>

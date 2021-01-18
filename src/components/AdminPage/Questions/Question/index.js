@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {
   QuestionNumber,
   Inner,
@@ -66,7 +66,6 @@ const Question = ({ question, questionIndex }) => {
               <Button
                 onClick={handleAddTest}
                 disabled={loading}
-                waiting={loading}
               >
                 Опубликовать тест
               </Button>
