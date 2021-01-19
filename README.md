@@ -11,7 +11,7 @@
   * json-server - библиотека для создания фейкового сервера
   * еще react-loading-skeleton / redux-logger / prop-types / normalize.css
   
-### Команды для запуска: `npm run dev` .
+### Команда для запуска: `npm run dev` .
   
   
   
