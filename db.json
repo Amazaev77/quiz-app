@@ -7,22 +7,7 @@
   "tests": [
     {
       "id": 1,
-      "title": "Джон Сноу или Марк Багдасаров? Проверь насколько хорошо ты знаешь зарубежные сериалы",
-      "subtitle": "Вводный текст"
-    },
-    {
-      "id": 2,
-      "title": "Junior, Middle или Senior: узнай свой уровень в JavaScript",
-      "subtitle": "Вводный текст"
-    },
-    {
-      "id": 3,
-      "title": "let vs. const vs. var. Война переменных. Давай определим на чьей ты стороне",
-      "subtitle": "Вводный текст"
-    },
-    {
-      "id": 4,
-      "title": "“Дашо т1ам схьалеци ахь”: сможешь отгадать какую песню поет Макка Межиева, а какую Билли Айлиш?",
+      "title": "Джон Сноу или Марк Багдасаров? Проверь насколько хорошо ты знаешь зарубежные фильмы и сериалы",
       "subtitle": "Вводный текст"
     }
   ],
@@ -39,18 +24,18 @@
     },
     {
       "id": 3,
-      "testId": 2,
-      "text": "Чему равно 0 || '' || 2 || undefined || true || falsе ?"
+      "testId": 1,
+      "text": "В каком фильме главный герой стал акционером компании Apple?"
     },
     {
       "id": 4,
-      "testId": 3,
-      "text": "Каков будет результат этой задачи: console.log(name) var name = ivan; ?"
+      "testId": 1,
+      "text": "Как звали двух главных злодеев в фильме «Один дома»?"
     },
     {
       "id": 5,
-      "testId": 4,
-      "text": "Кто поёт песню?"
+      "testId": 1,
+      "text": "В каком фильме два актёра получили Оскар за игру одного и того же персонажа?"
     }
   ],
   "answers": [
@@ -112,85 +97,61 @@
     {
       "id": 9,
       "questionId": 3,
-      "title": "true",
-      "description": "lorem",
+      "title": "Сладкий ноябрь",
+      "description": ":(",
       "right": false
     },
     {
       "id": 10,
       "questionId": 3,
-      "title": "2",
-      "description": "lorem",
-      "right": true
+      "title": "Крёстный отец",
+      "description": ":(",
+      "right": false
     },
     {
       "id": 11,
       "questionId": 3,
-      "title": "false",
-      "description": "lorem",
-      "right": false
+      "title": "Форрест Гамп",
+      "right": true
     },
     {
       "id": 12,
-      "questionId": 3,
-      "title": "““",
-      "description": "lorem",
-      "right": false
+      "questionId": 4,
+      "title": "Гарри и Марвин",
+      "description": "Верно",
+      "right": true
     },
     {
       "id": 13,
       "questionId": 4,
-      "title": "TypeError",
-      "description": "lorem",
+      "title": "Джон и Брэд",
+      "description": ":(",
       "right": false
     },
     {
       "id": 14,
       "questionId": 4,
-      "title": "undefined",
-      "description": "lorem",
+      "title": "Питер и Стэнли",
       "right": false
     },
     {
       "id": 15,
-      "questionId": 4,
-      "title": "ReferenceError",
-      "description": "lorem",
-      "right": true
+      "questionId": 5,
+      "title": "Умница Уилл Хантинг",
+      "right": false
     },
     {
       "id": 16,
-      "questionId": 4,
-      "title": "null",
-      "description": "lorem",
-      "right": false
+      "questionId": 5,
+      "title": "Крёстный отец 2",
+      "description": "Правильно",
+      "right": true
     },
     {
       "id": 17,
       "questionId": 5,
-      "title": "спортсмен",
-      "description": "lorem",
-      "right": false
-    },
-    {
-      "id": 18,
-      "questionId": 5,
-      "title": "актер",
-      "description": "lorem",
-      "right": false
-    },
-    {
-      "id": 19,
-      "questionId": 5,
-      "title": "певец",
-      "description": "lorem",
-      "right": true
-    },
-    {
-      "id": 20,
-      "questionId": 5,
-      "title": "собака",
-      "description": "lorem",
+      "title": "Форсаж 4",
+      "description": "",
       "right": false
     }
   ]
