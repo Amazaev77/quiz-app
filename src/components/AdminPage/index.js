@@ -24,7 +24,9 @@ const AdminPage = () => {
 
   return (
     <StyledAdminPage>
-      <TitlePage>Добавление нового теста</TitlePage>
+      <TitlePage>
+        Добавление нового теста
+      </TitlePage>
       <TextField
         value={test.title}
         onChange={handleTestTitle}
