@@ -8,7 +8,12 @@
     {
       "id": 1,
       "title": "Джон Сноу или Марк Багдасаров? Проверь насколько хорошо ты знаешь зарубежные фильмы и сериалы",
-      "subtitle": "Вводный текст"
+      "subtitle": "Начнем тест!"
+    },
+    {
+      "id": 2,
+      "title": "Задачки по JavaScript. Сможешь ли ты решить?",
+      "subtitle": "Начинаем"
     }
   ],
   "questions": [
@@ -36,6 +41,26 @@
       "id": 5,
       "testId": 1,
       "text": "В каком фильме два актёра получили Оскар за игру одного и того же персонажа?"
+    },
+    {
+      "id": 6,
+      "testId": 2,
+      "text": "Какие из этих вызовов синтаксически верно сгенерируют исключение?"
+    },
+    {
+      "id": 7,
+      "testId": 2,
+      "text": "Чему равно 2 && 1 && null && 0 && undefined ?"
+    },
+    {
+      "id": 8,
+      "testId": 2,
+      "text": "Верно ли, что null == undefined?"
+    },
+    {
+      "id": 9,
+      "testId": 2,
+      "text": "Что выведет этот код? - alert( +'Infinity' );"
     }
   ],
   "answers": [
@@ -151,6 +176,111 @@
       "id": 17,
       "questionId": 5,
       "title": "Форсаж 4",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 18,
+      "questionId": 6,
+      "title": "throw 'Ошибка'",
+      "description": "Неправильно",
+      "right": false
+    },
+    {
+      "id": 19,
+      "questionId": 6,
+      "title": "throw new Error('Ошибка')",
+      "description": "Верно",
+      "right": true
+    },
+    {
+      "id": 20,
+      "questionId": 6,
+      "title": "throw Error('Ошибка')",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 21,
+      "questionId": 6,
+      "title": "Ни один.",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 22,
+      "questionId": 7,
+      "title": "2",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 23,
+      "questionId": 7,
+      "title": "null",
+      "description": "Верно",
+      "right": true
+    },
+    {
+      "id": 24,
+      "questionId": 7,
+      "title": "0",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 25,
+      "questionId": 7,
+      "title": "undefined",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 26,
+      "questionId": 7,
+      "title": "1",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 27,
+      "questionId": 8,
+      "title": "true",
+      "description": "",
+      "right": true
+    },
+    {
+      "id": 28,
+      "questionId": 8,
+      "title": "false",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 29,
+      "questionId": 9,
+      "title": "Infinity",
+      "description": "",
+      "right": true
+    },
+    {
+      "id": 30,
+      "questionId": 9,
+      "title": "NaN",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 31,
+      "questionId": 9,
+      "title": "0",
+      "description": "",
+      "right": false
+    },
+    {
+      "id": 32,
+      "questionId": 9,
+      "title": "Будет ошибка.",
       "description": "",
       "right": false
     }
