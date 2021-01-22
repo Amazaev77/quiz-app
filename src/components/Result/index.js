@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button";
 import PileBox from "../PileBox";
 import { ResultText, ResultComment, InTestList } from "./style.js";
-import { Content, BtnBox } from "../styled/Lib";
+import { Content, BtnBox } from "../Lib/Lib";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { clearResults } from "../../redux/features/results";

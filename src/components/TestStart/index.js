@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Title, Subtitle, LengthQuestions } from "./style";
 import { useHistory, Redirect } from "react-router-dom";
-import { Content, BtnBox } from "../styled/Lib";
+import { Content, BtnBox } from "../Lib/Lib";
 
 const TestStart = () => {
   const id = parseInt(useParams().id);

@@ -1,23 +1,24 @@
 import styled from "styled-components";
 
 export const StyledApp = styled.div`
-  margin-top: 30px;
+  width: 1200px;
+  margin: auto;
 `;
 
 export const ButtonBox = styled.div`
-  position: absolute;
-  top: 50px;
   width: 145px;
 `;
 
 export const GitHubLink = styled.a`
-  position: absolute;
-  top: 10px;
-  left: 16px;
-  display: block;
-  & img {
-    width: 105px;
-    height: 48px;
-    border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 15px;
+  img {
+    width: 46px;
+    height: 46px;
   }
+`
+
+export const LinksBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `

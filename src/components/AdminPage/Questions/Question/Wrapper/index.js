@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "../../../../TextField";
 import Answers from "./Answers";
-import { Border, WrapperNumberAnswer } from "../../../../styled/Lib";
+import { Border, WrapperNumberAnswer } from "../../../../Lib/Lib";
 import {
   addAnswer,
   changeQuestion,

@@ -1,6 +1,6 @@
 import React from "react";
 import { NumMax, StyledAdminPage, TextQuestions } from "./style";
-import { TitlePage } from "../styled/Lib";
+import { TitlePage } from "../Lib/Lib";
 import TextField from "../TextField";
 import Questions from "./Questions";
 import { useDispatch, useSelector } from "react-redux";

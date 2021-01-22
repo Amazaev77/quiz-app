@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyledAuthorization } from "./style";
 import TextField from "../TextField";
-import { TitlePage } from "../styled/Lib";
+import { TitlePage } from "../Lib/Lib";
 import BtnToLogIn from "./BtnToLogIn";
 import { useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';

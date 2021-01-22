@@ -1,6 +1,6 @@
 import React from "react";
 import { NumberText, Checkbox, Label, SubTextTextarea, Check } from "./style";
-import { WrapperNumberAnswer, Border } from "../../../../../../styled/Lib";
+import { WrapperNumberAnswer, Border } from "../../../../../../Lib/Lib";
 import checkIcon from "../../../../../../../icons/check.svg";
 import TextField from "../../../../../../TextField";
 import { useDispatch } from "react-redux";

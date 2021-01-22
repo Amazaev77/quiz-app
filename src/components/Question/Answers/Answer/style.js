@@ -4,6 +4,10 @@ export const StyledAnswer = styled.div`
   margin-bottom: 30px;
 `;
 
+export const Check = styled.img`
+  width: 13px;
+`;
+
 export const WrapperAnswer = styled.div`
   display: inline-flex;
   cursor: pointer;

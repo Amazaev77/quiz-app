@@ -5,12 +5,14 @@ import {
   AnswerCircle,
   AnswerText,
   WrapperAnswer,
-  AnswerSubtext,
-} from "./style";
+  AnswerSubtext, Check,
+} from './style'
 import { useDispatch, useSelector } from "react-redux";
 import { selectAnswer } from "../../../../redux/features/answers";
 import { saveAnswer } from "../../../../redux/features/results";
 import { useParams } from "react-router-dom";
+import check from '../../../../icons/check.svg';
+import xIcon from '../../../../icons/xIcon.svg';
 
 const Answer = ({ answer, questionId }) => {
   const dispatch = useDispatch();
@@ -42,9 +44,9 @@ const Answer = ({ answer, questionId }) => {
     <StyledAnswer>
       <WrapperAnswer onClick={handleSelectAnswer}>
         <AnswerCircle>
-          {correctAnswer && <span className="material-icons check">done</span>}
+          {correctAnswer && <Check src={check} alt="check" />}
           {wrongAnswer && !answer.right && (
-            <span className="material-icons close">close</span>
+            <img src={xIcon} alt="xIcon" />
           )}
         </AnswerCircle>
         <div>

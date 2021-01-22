@@ -3,7 +3,7 @@ import PileBox from "../PileBox";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { QuestionText, LengthQuestions } from "./style";
-import { Content } from "../styled/Lib";
+import { Content } from "../Lib/Lib";
 import PreloaderQuestion from "./PreloaderQuestion";
 import PreloaderAnswers from "./PreloaderAnswers";
 import SwitchButton from "./SwitchButton";

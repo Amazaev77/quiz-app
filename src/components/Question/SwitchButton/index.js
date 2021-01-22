@@ -1,5 +1,5 @@
 import React from "react";
-import { BtnBox } from "../../styled/Lib";
+import { BtnBox } from "../../Lib/Lib";
 import Button from "../../Button";
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

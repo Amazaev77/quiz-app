@@ -14,29 +14,3 @@ body {
 .test:hover .pile {
   box-shadow: 0 1px 4px 0 #bababa;
 }
-
-.check,
-.close {
-  line-height: 18px;
-  font-size: 18px;
-  margin: 2% 0 0 3%;
-  animation: circle 150ms ease-in forwards;
-}
-@keyframes circle {
-  from {
-    font-size: 12px;
-    opacity: 0;
-  }
-  to {
-    font-size: 18px;
-    opacity: 1;
-  }
-}
-
-.check {
-  color: rgba(18, 210, 2, 1);
-}
-
-.close {
-  color: rgba(231, 2, 2, 1);
-}
